@@ -1,0 +1,26 @@
+{
+  "name": "js-sorting",
+  "version": "1.0.0",
+  "description": "A collection of sorting algorithms written in JavaScript.",
+  "devDependencies": {
+    "jasmine-node": "~1.14.3"
+  },
+  "scripts": {
+    "test": "jasmine-node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tyriar/js-sorting.git"
+  },
+  "keywords": [
+    "algorithm",
+    "computer science",
+    "sorting"
+  ],
+  "author": "Daniel Imms (http://www.growingwiththeweb.com)",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Tyriar/js-sorting/issues"
+  },
+  "homepage": "https://github.com/Tyriar/js-sorting"
+}
