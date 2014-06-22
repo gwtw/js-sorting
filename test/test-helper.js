@@ -5,16 +5,26 @@ var testHelper = {};
 // array passed in as an argument.
 testHelper.runTests = function (name, algorithm) {
   describe(name, function () {
-    for (var i = 0; i < tests.length; i++) {
-      var test = tests[i];
-      it(test.it, function () {
-        expect(algorithm(test.original)).toEqual(test.sorted);
-      })
+    for (var i = 0; i < testHelper.tests.length; i++) {
+      (function (test) {
+        it(test.it, function () {
+          expect(algorithm(testHelper.getOriginal(test)))
+            .toEqual(testHelper.getSorted(test));
+        });
+      })(testHelper.tests[i]);
     }
   });
 };
 
-var tests = [{
+// Only test on copies of the test arrays
+testHelper.getOriginal = function (test) {
+  return test.original.slice(0);
+};
+testHelper.getSorted = function (test) {
+  return test.sorted.slice(0);
+}
+
+testHelper.tests = [{
   it: "Should sort empty array",
   original: [],
   sorted: []

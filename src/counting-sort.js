@@ -25,8 +25,10 @@
     sort: sort
   };
 
+  // maxValue is optional, specifying it will initalise the array to the correct
+  // size
   function sort(array, maxValue) {
-    var buckets = new Array(maxValue);
+    var buckets = new Array(maxValue + 1);
     var sortedIndex = 0;
     var i;
 
