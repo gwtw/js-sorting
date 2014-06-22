@@ -25,13 +25,13 @@
     sort: sort
   };
 
-  function sort(array) {
+  function sort(array, compareFunc) {
     var workArray = new Array(array.length);
     var chunkSize = 1;
     while (chunkSize < array.length) {
       var i = 0;
       while (i < array.length - chunkSize) {
-        bottomUpMerge(array, i, chunkSize, workArray);
+        bottomUpMerge(array, i, chunkSize, workArray, compareFunc);
         i += chunkSize * 2;
       }
       chunkSize *= 2;
@@ -39,7 +39,7 @@
     return array;
   }
 
-  function bottomUpMerge(array, leftPosition, chunkSize, workArray) {
+  function bottomUpMerge(array, leftPosition, chunkSize, workArray, compareFunc) {
     var i;
     var rightPosition = leftPosition + chunkSize;
     var endPosition = Math.min(leftPosition + chunkSize * 2 - 1, array.length - 1);
@@ -49,7 +49,7 @@
     for (i = 0; i <= endPosition - leftPosition; i++) {
       if (leftIndex < rightPosition &&
           (rightIndex > endPosition ||
-          array[leftIndex] <= array[rightIndex])) {
+          compare(array[leftIndex], array[rightIndex], compareFunc) <= 0)) {
         workArray[i] = array[leftIndex++];
       } else {
         workArray[i] = array[rightIndex++];
@@ -59,6 +59,13 @@
     for (i = leftPosition; i <= endPosition; i++) {
       array[i] = workArray[i - leftPosition];
     }
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
   }
 
   return mergeSortBottomUp;

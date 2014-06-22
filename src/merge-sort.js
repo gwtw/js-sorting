@@ -25,7 +25,7 @@
     sort: sort
   };
 
-  function sort(array) {
+  function sort(array, compareFunc) {
     if (array.length <= 1)
       return array;
     
@@ -41,10 +41,10 @@
       right[i] = array[i + left.length];
     }
     
-    return merge(sort(left), sort(right));
+    return merge(sort(left, compareFunc), sort(right, compareFunc), compareFunc);
   };
 
-  function merge(left, right) {
+  function merge(left, right, compareFunc) {
     var result = new Array(left.length + right.length);
     var leftIndex = 0;
     var rightIndex = 0;
@@ -52,7 +52,7 @@
     
     while (leftIndex < left.length || rightIndex < right.length) {
       if (leftIndex < left.length && rightIndex < right.length) {
-        if (left[leftIndex] <= right[rightIndex]) {
+        if (compare(left[leftIndex], right[rightIndex], compareFunc) <= 0) {
           result[resultIndex++] = left[leftIndex++];
         } else {
           result[resultIndex++] = right[rightIndex++];
@@ -64,6 +64,13 @@
       }
     }
     return result;
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
   }
 
   return mergeSort;

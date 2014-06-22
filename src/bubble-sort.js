@@ -25,12 +25,12 @@
     sort: sort
   };
 
-  function sort(array) {
+  function sort(array, compareFunc) {
     var i, j;
     
     for (i = 0; i < array.length - 1; i++) {
       for (j = 1; j < array.length - i; j++) {
-        if (array[j - 1] > array[j]) {
+        if (compare(array[j - 1], array[j], compareFunc) > 0) {
           swap(array, j, j - 1);
         }
       }
@@ -43,6 +43,13 @@
     var temp = array[a];
     array[a] = array[b];
     array[b] = temp;
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
   }
 
   return bubbleSort;

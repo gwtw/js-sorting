@@ -25,31 +25,31 @@
     sort: sort
   };
 
-  function sort(array) {
-    sortInternal(array, 0, array.length - 1);
+  function sort(array, compareFunc) {
+    sortInternal(array, 0, array.length - 1, compareFunc);
     return array;
   }
 
-  function sortInternal(array, left, right) {
+  function sortInternal(array, left, right, compareFunc) {
     if (left < right) {
-      var pivot = partitionRandom(array, left, right);
-      sortInternal(array, left, pivot - 1);
-      sortInternal(array, pivot + 1, right);
+      var pivot = partitionRandom(array, left, right, compareFunc);
+      sortInternal(array, left, pivot - 1, compareFunc);
+      sortInternal(array, pivot + 1, right, compareFunc);
     }
   }
 
-  function partitionRandom(array, left, right) {
+  function partitionRandom(array, left, right, compareFunc) {
     var pivot = left + Math.floor(Math.random() * (right - left));
     swap(array, right, pivot);
-    return partitionRight(array, left, right);
+    return partitionRight(array, left, right, compareFunc);
   }
 
-  function partitionRight(array, left, right) {
+  function partitionRight(array, left, right, compareFunc) {
     var pivot = array[right];
     var mid = left;
 
     for (var i = mid; i < right; i++) {
-      if (array[i] <= pivot) {
+      if (compare(array[i], pivot, compareFunc) <= 0) {
         swap(array, i, mid++);
       }
     }
@@ -64,6 +64,13 @@
       array[a] = array[b];
       array[b] = temp;
     }
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
   }
 
   return quicksort;

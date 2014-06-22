@@ -25,40 +25,42 @@
     sort: sort
   };
 
-  function sort(array) {
+  function sort(array, compareFunc) {
     var heapSize = array.length;
-    buildHeap(array, heapSize);
+    buildHeap(array, heapSize, compareFunc);
     while (heapSize > 1) {
       swap(array, 0, heapSize - 1);
       heapSize--;
-      heapify(array, heapSize, 0);
+      heapify(array, heapSize, 0, compareFunc);
     }
     return array;
   }
 
-  function buildHeap(array, heapSize) {
+  function buildHeap(array, heapSize, compareFunc) {
     for (var i = Math.floor(array.length / 2); i >= 0; i--)
-      heapify(array, heapSize, i);
+      heapify(array, heapSize, i, compareFunc);
   }
 
-  function heapify(array, heapSize, i) {
+  function heapify(array, heapSize, i, compareFunc) {
     var left = i * 2 + 1;
     var right = i * 2 + 2;
     var largest;
 
-    if (left < heapSize && array[left] > array[i]) {
+    if (left < heapSize &&
+        compare(array[left], array[i], compareFunc) > 0) {
       largest = left;
     } else {
       largest = i;
     }
 
-    if (right < heapSize && array[right] > array[largest]) {
+    if (right < heapSize &&
+        compare(array[right], array[largest], compareFunc) > 0) {
       largest = right;
     }
 
     if (largest != i) {
       swap(array, i, largest);
-      heapify(array, heapSize, largest);
+      heapify(array, heapSize, largest, compareFunc);
     }
   }
 
@@ -66,6 +68,13 @@
     var temp = list[a];
     list[a] = list[b];
     list[b] = temp;
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
   }
 
   return heapsort;

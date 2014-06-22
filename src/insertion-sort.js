@@ -10,35 +10,43 @@
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
-	define([], function () {
-	  return (root.insertionSort = factory());
-	});
+    define([], function () {
+        return (root.insertionSort = factory());
+    });
   } else if (typeof exports === 'object') {
-	module.exports = factory();
+    module.exports = factory();
   } else {
-	root.insertionSort = factory();
+    root.insertionSort = factory();
   }
 }(this, function (assert) {
   'use strict';
 
   var insertionSort = {
-		sort: sort
+    sort: sort
   };
 
-	function sort(array) {
-		var i;
+  function sort(array, compareFunc) {
+    var i;
 
-		for (i = 1; i < array.length; i++) {
-			var item = array[i];
-			var indexHole = i;
-			while (indexHole > 0 && array[indexHole - 1] > item) {
-				array[indexHole] = array[--indexHole];
-			}
-			array[indexHole] = item;
-		}
+    for (i = 1; i < array.length; i++) {
+      var item = array[i];
+      var indexHole = i;
+      while (indexHole > 0 && 
+          compare(array[indexHole - 1], item, compareFunc) > 0) {
+        array[indexHole] = array[--indexHole];
+      }
+      array[indexHole] = item;
+    }
 
-		return array;
-	}
+    return array;
+  }
+
+  function compare(a, b, compareFunc) {
+    if (compareFunc) {
+      return compareFunc(a, b);
+    }
+    return a - b;
+  }
 
   return insertionSort;
 }));
