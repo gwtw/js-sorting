@@ -6,6 +6,45 @@ A collection of sorting algorithms written in JavaScript. Each algorithm is encl
 
 To learn more about how each algorithm is implemented have a look at the [technical articles on my blog][2].
 
+## Including
+
+### Browser
+
+    <script src="bower_components/js-sorting/src/merge-sort.js"></script>
+
+### Node.JS
+
+    var mergeSort = require("merge-sort");
+
+## Usage
+
+    // Sort normally
+    mergeSort.sort([5, 3, 2, 4, 1]);
+
+    // Sort in reverse
+    mergeSort.sort([5, 3, 2, 4, 1], function (a, b) {
+        return b - a;
+    });
+
+    // Sort complex objects
+    var list = [
+      { 'firstname': 'John',   'lastname': 'Smith'   },
+      { 'firstname': 'Daniel', 'lastname': 'Imms'    },
+      { 'firstname': 'Mary',   'lastname': 'Jackson' },
+      { 'firstname': 'John',   'lastname': 'Brown'   },
+      { 'firstname': 'Mary',   'lastname': 'Harris'  },
+    ];
+    mergeSort.sort(list, function (a, b) {
+      // Sort by first name first
+      if (a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
+      if (a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
+      // Sort by last name second
+      if (a.lastname.toLowerCase() < b.lastname.toLowerCase()) return -1;
+      if (a.lastname.toLowerCase() > b.lastname.toLowerCase()) return 1;
+      return 0;
+    });
+
+
 ## Contributing
 
 I'd love to get some contributions for other sorting algorithms, if you want to make a pull request try to follow the existing style of the code and make sure you add tests for the new algorithm.
