@@ -1,4 +1,11 @@
 // Explanation: http://www.growingwiththeweb.com/2012/11/algorithm-heapsort.html
+//
+// Complexity (n=input size)
+//   Time, worse case:   O(n log n)
+//   Time, best case:    O(n log n)
+//   Time, average case: O(n log n)
+//   Space worst case:   O(1) auxiliary
+
 // UMD pattern: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 (function (root, factory) {
   'use strict';
@@ -30,8 +37,7 @@
   }
 
   function buildHeap(array, heapSize) {
-    var i;
-    for (i = Math.floor(array.length / 2); i >= 0; i--)
+    for (var i = Math.floor(array.length / 2); i >= 0; i--)
       heapify(array, heapSize, i);
   }
 

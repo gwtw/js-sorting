@@ -1,4 +1,11 @@
 // Explanation: http://www.growingwiththeweb.com/2012/11/algorithm-merge-sort.html
+//
+// Complexity (n=input size)
+//   Time, worse case:   O(n log n)
+//   Time, best case:    O(n log n)
+//   Time, average case: O(n log n)
+//   Space worst case:   O(n) auxiliary
+
 // UMD pattern: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 (function (root, factory) {
   'use strict';

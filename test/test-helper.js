@@ -3,7 +3,7 @@ var testHelper = {};
 // This function expects algorithm to be a function that takes an array as an
 // argument and returnsa sorted array. The array returned may or may not be the
 // array passed in as an argument.
-testHelper.testSortingAlgorithm = function (name, algorithm) {
+testHelper.runTests = function (name, algorithm) {
   describe(name, function () {
     for (var i = 0; i < tests.length; i++) {
       var test = tests[i];

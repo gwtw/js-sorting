@@ -1,4 +1,4 @@
 var testHelper = require("./test-helper");
 var algorithm = require("../src/bubble-sort");
 
-testHelper.testSortingAlgorithm("bubble-sort", algorithm.sort);
+testHelper.runTests("bubble-sort", algorithm.sort);
