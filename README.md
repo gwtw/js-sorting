@@ -15,4 +15,4 @@ js-sorting is released under [BSD (2 clause)][3].
 
 [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
-[3]: https://github.com/Tyriar/js-sorting/blog/master/LICENSE
+[3]: https://github.com/Tyriar/js-sorting/blob/master/LICENSE
