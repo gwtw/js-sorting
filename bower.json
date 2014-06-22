@@ -1,0 +1,28 @@
+{
+  "name": "js-sorting",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Tyriar/js-sorting",
+  "authors": [
+    "Daniel Imms (http://www.growingwiththeweb.com)"
+  ],
+  "description": "A collection of sorting algorithms written in JavaScript.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "algorithm",
+    "computer",
+    "science",
+    "sorting"
+  ],
+  "license": "BSD-2-clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
