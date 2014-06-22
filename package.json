@@ -1,6 +1,6 @@
 {
   "name": "js-sorting",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of sorting algorithms written in JavaScript.",
   "devDependencies": {
     "jasmine-node": "~1.14.3"
