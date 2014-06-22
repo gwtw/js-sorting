@@ -6,9 +6,13 @@ A collection of sorting algorithms written in JavaScript. Each algorithm is encl
 
 To learn more about how each algorithm is implemented have a look at the [technical articles on my blog][2].
 
-## Testing
+## Contributing
 
-    npm init
+I'd love to get some contributions for other sorting algorithms, if you want to make a pull request try to follow the existing style of the code and make sure you add tests for the new algorithm.
+
+## Testing locally
+
+    npm install
     npm test
 
 ## License
