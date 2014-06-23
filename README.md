@@ -10,39 +10,45 @@ To learn more about how each algorithm is implemented have a look at the [techni
 
 ### Browser
 
-    <script src="bower_components/js-sorting/src/merge-sort.js"></script>
+```html
+<script src="bower_components/js-sorting/src/merge-sort.js"></script>
+```
 
 ### Node.JS
 
-    var mergeSort = require("merge-sort");
+```javascript
+var mergeSort = require("merge-sort");
+```
 
 ## Usage
 
-    // Sort normally
-    mergeSort.sort([5, 3, 2, 4, 1]);
+```javascript
+// Sort normally
+mergeSort.sort([5, 3, 2, 4, 1]);
 
-    // Sort in reverse
-    mergeSort.sort([5, 3, 2, 4, 1], function (a, b) {
-        return b - a;
-    });
+// Sort in reverse
+mergeSort.sort([5, 3, 2, 4, 1], function (a, b) {
+    return b - a;
+});
 
-    // Sort complex objects
-    var list = [
-      { 'firstname': 'John',   'lastname': 'Smith'   },
-      { 'firstname': 'Daniel', 'lastname': 'Imms'    },
-      { 'firstname': 'Mary',   'lastname': 'Jackson' },
-      { 'firstname': 'John',   'lastname': 'Brown'   },
-      { 'firstname': 'Mary',   'lastname': 'Harris'  },
-    ];
-    mergeSort.sort(list, function (a, b) {
-      // Sort by first name first
-      if (a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
-      if (a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
-      // Sort by last name second
-      if (a.lastname.toLowerCase() < b.lastname.toLowerCase()) return -1;
-      if (a.lastname.toLowerCase() > b.lastname.toLowerCase()) return 1;
-      return 0;
-    });
+// Sort complex objects
+var list = [
+  { 'firstname': 'John',   'lastname': 'Smith'   },
+  { 'firstname': 'Daniel', 'lastname': 'Imms'    },
+  { 'firstname': 'Mary',   'lastname': 'Jackson' },
+  { 'firstname': 'John',   'lastname': 'Brown'   },
+  { 'firstname': 'Mary',   'lastname': 'Harris'  },
+];
+mergeSort.sort(list, function (a, b) {
+  // Sort by first name first
+  if (a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
+  if (a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
+  // Sort by last name second
+  if (a.lastname.toLowerCase() < b.lastname.toLowerCase()) return -1;
+  if (a.lastname.toLowerCase() > b.lastname.toLowerCase()) return 1;
+  return 0;
+});
+```
 
 
 ## Contributing
@@ -51,8 +57,10 @@ I'd love to get some contributions for other sorting algorithms, if you want to 
 
 ## Testing locally
 
-    npm install
-    npm test
+```bash
+npm install
+npm test
+```
 
 ## License
 
