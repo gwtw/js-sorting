@@ -57,7 +57,7 @@ I'd love to get some contributions for other sorting algorithms, if you want to 
 
 ## Testing locally
 
-```bash
+```
 npm install
 npm test
 ```
