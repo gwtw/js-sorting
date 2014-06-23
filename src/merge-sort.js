@@ -18,7 +18,7 @@
   } else {
     root.mergeSort = factory();
   }
-}(this, function (assert) {
+}(this, function () {
   'use strict';
 
   var mergeSort = {

@@ -18,7 +18,7 @@
   } else {
     root.quicksort = factory();
   }
-}(this, function (assert) {
+}(this, function () {
   'use strict';
 
   var quicksort = {

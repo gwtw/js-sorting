@@ -18,7 +18,7 @@
   } else {
     root.selectionSort = factory();
   }
-}(this, function (assert) {
+}(this, function () {
   'use strict';
 
   var selectionSort = {
