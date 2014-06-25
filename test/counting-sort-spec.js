@@ -4,7 +4,7 @@ var algorithm = require("../src/counting-sort");
 describe("counting-sort", function () {
   // sort(array, maxValue) for arrays with non-negative values only.
   describe("sort(array, maxValue)", function () {
-    for (var i = 0; i < testHelper.tests.length; i++) {
+    for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         var sorted = testHelper.getSorted(test);
         var original = testHelper.getOriginal(test);
@@ -17,13 +17,13 @@ describe("counting-sort", function () {
               .toEqual(sorted);
           });
         }
-      })(testHelper.tests[i]);
+      })(testHelper.integerTests[i]);
     }
   });
 
   // Test sort(array, minValue, maxValue) for arrays with a specific range.
   describe("sort(array, minValue, maxValue)", function () {
-    for (var i = 0; i < testHelper.tests.length; i++) {
+    for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         var sorted = testHelper.getSorted(test);
         var original = testHelper.getOriginal(test);
@@ -34,7 +34,7 @@ describe("counting-sort", function () {
           expect(algorithm.sort(original, minValue, maxValue))
             .toEqual(sorted);
         });
-      })(testHelper.tests[i]);
+      })(testHelper.integerTests[i]);
     }
   });
 });

@@ -1,19 +1,19 @@
 var testHelper = {};
 
-testHelper.tests = require("./data/regular-tests");
+testHelper.integerTests = require("./data/integer-tests");
+testHelper.integerReverseTests = require("./data/integer-reverse-tests");
 testHelper.stringTests = require("./data/string-tests");
-testHelper.reverseTests = require("./data/reverse-tests");
 
 // Test sorting integer arrays.
 testHelper.runIntegerTests = function (algorithm) {
   describe('integer tests', function () {
-    for (var i = 0; i < testHelper.tests.length; i++) {
+    for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         it(test.it, function () {
           expect(algorithm(testHelper.getOriginal(test)))
             .toEqual(testHelper.getSorted(test));
         });
-      })(testHelper.tests[i]);
+      })(testHelper.integerTests[i]);
     }
   });
 };
@@ -36,7 +36,7 @@ testHelper.runStringTests = function (algorithm) {
 // Test sorting both normally and in reverse using custom comparison functions.
 testHelper.runCustomComparisonTests = function (algorithm) {
   describe('custom comparison tests', function () {
-    for (var i = 0; i < testHelper.reverseTests.length; i++) {
+    for (var i = 0; i < testHelper.integerReverseTests.length; i++) {
       (function (test) {
         it(test.it, function () {
           var compare = function (a, b) {
@@ -45,9 +45,9 @@ testHelper.runCustomComparisonTests = function (algorithm) {
           expect(algorithm(testHelper.getOriginal(test), compare))
             .toEqual(testHelper.getSorted(test));
         });
-      })(testHelper.reverseTests[i]);
+      })(testHelper.integerReverseTests[i]);
     }
-    for (var i = 0; i < testHelper.tests.length; i++) {
+    for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         it(test.it, function () {
           var compare = function (a, b) {
@@ -56,7 +56,7 @@ testHelper.runCustomComparisonTests = function (algorithm) {
           expect(algorithm(testHelper.getOriginal(test), compare))
             .toEqual(testHelper.getSorted(test));
         });
-      })(testHelper.tests[i]);
+      })(testHelper.integerTests[i]);
     }
   });
 };
