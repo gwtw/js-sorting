@@ -1,13 +1,12 @@
 var testHelper = {};
 
 testHelper.tests = require("./data/regular-tests");
+testHelper.stringTests = require("./data/string-tests");
 testHelper.reverseTests = require("./data/reverse-tests");
 
-// This function expects algorithm to be a function that takes an array as an
-// argument and returnsa sorted array. The array returned may or may not be the
-// array passed in as an argument.
-testHelper.runTests = function (name, algorithm) {
-  describe(name, function () {
+// Test sorting integer arrays.
+testHelper.runIntegerTests = function (algorithm) {
+  describe('integer tests', function () {
     for (var i = 0; i < testHelper.tests.length; i++) {
       (function (test) {
         it(test.it, function () {
@@ -19,10 +18,24 @@ testHelper.runTests = function (name, algorithm) {
   });
 };
 
-// Like runTests but runs the algorithm passing in a custom comparison function
-// to sort both normally and in reverse.
-testHelper.runCustomComparisonTests = function (name, algorithm) {
-  describe(name, function () {
+// Test sorting character and string arrays. These will only work on comparison
+// sorts.
+testHelper.runStringTests = function (algorithm) {
+  describe('string tests', function () {
+    for (var i = 0; i < testHelper.stringTests.length; i++) {
+      (function (test) {
+        it(test.it, function () {
+          expect(algorithm(testHelper.getOriginal(test)))
+            .toEqual(testHelper.getSorted(test));
+        });
+      })(testHelper.stringTests[i]);
+    }
+  });
+};
+
+// Test sorting both normally and in reverse using custom comparison functions.
+testHelper.runCustomComparisonTests = function (algorithm) {
+  describe('custom comparison tests', function () {
     for (var i = 0; i < testHelper.reverseTests.length; i++) {
       (function (test) {
         it(test.it, function () {

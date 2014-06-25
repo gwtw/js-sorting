@@ -1,0 +1,45 @@
+[{
+  "it": "should sort sorted character array",
+  "original": ["a","b","c","d","e"],
+  "sorted": ["a","b","c","d","e"]
+}, {
+  "it": "should sort reverse sorted character array",
+  "original": ["e","d","c","b","a"],
+  "sorted": ["a","b","c","d","e"]
+}, {
+  "it": "should sort sorted character array with two values swapped",
+  "original": ["a","c","b","d","e"],
+  "sorted": ["a","b","c","d","e"]
+}, {
+  "it": "should sort jumbled character array",
+  "original": ["i","b","a","h","c","g","d","f","e","j"],
+  "sorted": ["a","b","c","d","e","f","g","h","i","j"]
+}, {
+  "it": "should sort character array with duplicate values",
+  "original": ["b","c","a","d","c","a","b","d"],
+  "sorted": ["a","a","b","b","c","c","d","d"]
+},{
+  "it": "should sort sorted string array",
+  "original": ["aa","bb","cc","dd","ee"],
+  "sorted": ["aa","bb","cc","dd","ee"]
+}, {
+  "it": "should sort reverse sorted string array",
+  "original": ["ee","dd","cc","bb","aa"],
+  "sorted": ["aa","bb","cc","dd","ee"]
+}, {
+  "it": "should sort sorted string array with two values swapped",
+  "original": ["aa","cc","bb","dd","ee"],
+  "sorted": ["aa","bb","cc","dd","ee"]
+}, {
+  "it": "should sort jumbled string array",
+  "original": ["ii","bb","aa","hh","cc","gg","dd","ff","ee","jj"],
+  "sorted": ["aa","bb","cc","dd","ee","ff","gg","hh","ii","jj"]
+}, {
+  "it": "should sort string array with duplicate values",
+  "original": ["bb","cc","aa","dd","cc","aa","bb","dd"],
+  "sorted": ["aa","aa","bb","bb","cc","cc","dd","dd"]
+}, {
+  "it": "should sort second character in a string array",
+  "original": ["bb","ca","ab","da","cb","aa","ba","db"],
+  "sorted": ["aa","ab","ba","bb","ca","cb","da","db"]
+}]

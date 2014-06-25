@@ -1,5 +1,8 @@
 var testHelper = require("./test-helper");
 var algorithm = require("../src/quicksort");
 
-testHelper.runTests("quicksort", algorithm.sort);
-testHelper.runCustomComparisonTests("quicksort custom comparison", algorithm.sort);
+describe("quicksort", function () {
+  testHelper.runIntegerTests(algorithm.sort);
+  testHelper.runStringTests(algorithm.sort);
+  testHelper.runCustomComparisonTests(algorithm.sort);
+});

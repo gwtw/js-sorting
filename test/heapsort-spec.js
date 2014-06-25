@@ -1,5 +1,8 @@
 var testHelper = require("./test-helper");
 var algorithm = require("../src/heapsort");
 
-testHelper.runTests("heapsort", algorithm.sort);
-testHelper.runCustomComparisonTests("heapsort custom comparison", algorithm.sort);
+describe("heapsort", function () {
+  testHelper.runIntegerTests(algorithm.sort);
+  testHelper.runStringTests(algorithm.sort);
+  testHelper.runCustomComparisonTests(algorithm.sort);
+});
