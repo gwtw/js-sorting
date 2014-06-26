@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/Tyriar/js-sorting.png)](http://travis-ci.org/Tyriar/js-sorting)
 
-A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
+A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file, wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
 
 To learn more about how each algorithm is implemented have a look at the [technical articles on my blog][2].
 
