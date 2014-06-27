@@ -42,7 +42,7 @@
     }
     
     return merge(sort(left, compareFunc), sort(right, compareFunc), compareFunc);
-  };
+  }
 
   function merge(left, right, compareFunc) {
     var result = new Array(left.length + right.length);
