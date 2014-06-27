@@ -1,6 +1,7 @@
 # js-sorting
 
 [![Build Status](https://secure.travis-ci.org/Tyriar/js-sorting.png)](http://travis-ci.org/Tyriar/js-sorting)
+[![Code climate](https://codeclimate.com/github/Tyriar/js-sorting.png)](https://codeclimate.com/github/Tyriar/js-sorting/badges)
 
 A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file, wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
 
