@@ -37,8 +37,9 @@
   }
 
   function buildHeap(array, heapSize, compareFunc) {
-    for (var i = Math.floor(array.length / 2); i >= 0; i--)
+    for (var i = Math.floor(array.length / 2); i >= 0; i--) {
       heapify(array, heapSize, i, compareFunc);
+    }
   }
 
   function heapify(array, heapSize, i, compareFunc) {
@@ -58,7 +59,7 @@
       largest = right;
     }
 
-    if (largest != i) {
+    if (largest !== i) {
       swap(array, i, largest);
       heapify(array, heapSize, largest, compareFunc);
     }
@@ -74,8 +75,12 @@
     if (compareFunc) {
       return compareFunc(a, b);
     }
-    if (a > b) return 1;
-    if (a < b) return -1;
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
     return 0;
   }
 

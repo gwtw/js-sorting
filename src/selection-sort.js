@@ -35,7 +35,7 @@
         }
       }
 
-      if (minIndex != i) {
+      if (minIndex !== i) {
         swap(array, i, minIndex);
       }
     }
@@ -53,8 +53,12 @@
     if (compareFunc) {
       return compareFunc(a, b);
     }
-    if (a > b) return 1;
-    if (a < b) return -1;
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
     return 0;
   }
 

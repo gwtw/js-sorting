@@ -26,21 +26,22 @@
   };
 
   function sort(array, compareFunc) {
-    if (array.length <= 1)
+    if (array.length <= 1) {
       return array;
-    
+    }
+
     var i;
     var middle = Math.floor(array.length / 2);
     var left = new Array(middle);
     var right = new Array(array.length - middle);
-    
+
     for (i = 0; i < left.length; i++) {
       left[i] = array[i];
     }
     for (i = 0; i < right.length; i++) {
       right[i] = array[i + left.length];
     }
-    
+
     return merge(sort(left, compareFunc), sort(right, compareFunc), compareFunc);
   }
 
@@ -49,7 +50,7 @@
     var leftIndex = 0;
     var rightIndex = 0;
     var resultIndex = 0;
-    
+
     while (leftIndex < left.length || rightIndex < right.length) {
       if (leftIndex < left.length && rightIndex < right.length) {
         if (compare(left[leftIndex], right[rightIndex], compareFunc) <= 0) {
@@ -70,8 +71,12 @@
     if (compareFunc) {
       return compareFunc(a, b);
     }
-    if (a > b) return 1;
-    if (a < b) return -1;
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
     return 0;
   }
 

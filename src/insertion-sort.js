@@ -31,7 +31,7 @@
     for (i = 1; i < array.length; i++) {
       var item = array[i];
       var indexHole = i;
-      while (indexHole > 0 && 
+      while (indexHole > 0 &&
           compare(array[indexHole - 1], item, compareFunc) > 0) {
         array[indexHole] = array[--indexHole];
       }
@@ -45,8 +45,12 @@
     if (compareFunc) {
       return compareFunc(a, b);
     }
-    if (a > b) return 1;
-    if (a < b) return -1;
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
     return 0;
   }
 
