@@ -35,6 +35,8 @@ var mergeSort = require("merge-sort");
 
 ## Usage
 
+See [the source files][4] for a list sorts available and their public interfaces, Here is an example for the [merge sort][5].
+
 ```javascript
 // Sort normally
 mergeSort.sort([5, 3, 2, 4, 1]);
@@ -76,11 +78,12 @@ npm test
 
 ## See also
 
-* [Tyriar/js-data-structures][4]
+* [Tyriar/js-data-structures][3]
 
 
 
 [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
-[3]: https://github.com/Tyriar/js-sorting/blob/master/LICENSE
-[4]: https://github.com/Tyriar/js-data-structures
+[3]: https://github.com/Tyriar/js-data-structures
+[4]: https://github.com/Tyriar/js-sorting/tree/master/src
+[5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
