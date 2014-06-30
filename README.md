@@ -9,6 +9,8 @@ To learn more about how each algorithm is implemented have a look at the [techni
 
 ## Installing
 
+### Bower
+
 ```
 bower install --save js-sorting
 ```
