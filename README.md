@@ -7,6 +7,18 @@ A collection of sorting algorithms written in JavaScript. Each algorithm is encl
 
 To learn more about how each algorithm is implemented have a look at the [technical articles on my blog][2].
 
+## Installing
+
+```
+bower install --save js-sorting
+```
+
+### NPM
+
+```
+npm install --save js-sorting
+```
+
 ## Including
 
 ### Browser
@@ -51,22 +63,24 @@ mergeSort.sort(list, function (a, b) {
 });
 ```
 
-
 ## Contributing
 
 I'd love to get some contributions for other sorting algorithms, if you want to make a pull request try to follow the existing style of the code and make sure you add tests for the new algorithm.
 
-## Testing locally
+### Testing locally
 
 ```
 npm install
 npm test
 ```
 
-## License
+## See also
 
-js-sorting is released under [BSD (2 clause)][3].
+* [Tyriar/js-data-structures][4]
+
+
 
 [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
 [3]: https://github.com/Tyriar/js-sorting/blob/master/LICENSE
+[4]: https://github.com/Tyriar/js-data-structures
