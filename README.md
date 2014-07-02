@@ -9,13 +9,13 @@ To learn more about how each algorithm is implemented have a look at the [techni
 
 ## Installing
 
-### Bower
+**Bower**
 
 ```
 bower install --save js-sorting
 ```
 
-### NPM
+**NPM**
 
 ```
 npm install --save js-sorting
@@ -23,13 +23,13 @@ npm install --save js-sorting
 
 ## Including
 
-### Browser
+**Browser**
 
 ```html
 <script src="bower_components/js-sorting/src/merge-sort.js"></script>
 ```
 
-### Node.JS
+**Node.JS**
 
 ```javascript
 var mergeSort = require("merge-sort");
