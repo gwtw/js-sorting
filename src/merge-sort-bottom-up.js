@@ -1,13 +1,13 @@
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
-  define([], function () {
-    return (root.mergeSortBottomUp = factory());
-  });
+    define([], function () {
+      return (root.mergeSortBottomUp = factory());
+    });
   } else if (typeof exports === 'object') {
-  module.exports = factory();
+    module.exports = factory();
   } else {
-  root.mergeSortBottomUp = factory();
+    root.mergeSortBottomUp = factory();
   }
 }(this, function () {
   'use strict';
