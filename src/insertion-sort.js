@@ -2,7 +2,7 @@
   'use strict';
   if (typeof define === 'function' && define.amd) {
     define([], function () {
-        return (root.insertionSort = factory());
+      return (root.insertionSort = factory());
     });
   } else if (typeof exports === 'object') {
     module.exports = factory();
