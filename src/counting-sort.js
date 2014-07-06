@@ -1,12 +1,3 @@
-// Explanation: http://www.growingwiththeweb.com/2014/05/counting-sort.html
-//
-// Complexity (n=input size, k=possible number of values)
-//   Time, worse case:   O(n + k)
-//   Time, best case:    O(n + k)
-//   Time, average case: O(n + k)
-//   Space worst case:   O(n + k) auxiliary
-
-// UMD pattern: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {

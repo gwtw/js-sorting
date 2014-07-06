@@ -1,12 +1,3 @@
-// Explanation: http://www.growingwiththeweb.com/2012/12/algorithm-quicksort.html
-//
-// Complexity (n=input size)
-//   Time, worse case:   O(n^2)
-//   Time, best case:    O(n log n)
-//   Time, average case: O(n log n)
-//   Space worst case:   O(log n) auxiliary
-
-// UMD pattern: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
