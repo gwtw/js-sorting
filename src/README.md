@@ -20,7 +20,7 @@
   [04_1]: https://github.com/Tyriar/js-sorting/blob/master/src/heapsort.js
   [05_a]: http://www.growingwiththeweb.com/2012/11/algorithm-insertion-sort.html
   [05_1]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
-  [06_a]: http://www.growingwiththeweb.com/2012/12/algorithm-quicksort.html
+  [06_a]: http://www.growingwiththeweb.com/2012/11/algorithm-merge-sort.html
   [06_1]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
   [06_2]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort-bottom-up.js
   [07_1]: https://github.com/Tyriar/js-sorting/blob/master/src/odd-even-sort.js
