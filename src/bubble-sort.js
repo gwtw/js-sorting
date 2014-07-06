@@ -1,3 +1,4 @@
+/* jshint ignore:start */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -9,7 +10,12 @@
   } else {
     root.bubbleSort = factory();
   }
-}(this, function () {
+}(this,
+/* jshint ignore:end */
+/*jshint -W025 */
+function () {
+/*jshint +W025 */
+
   'use strict';
 
   var bubbleSort = {
@@ -50,4 +56,8 @@
   }
 
   return bubbleSort;
-}));
+
+}
+/* jshint ignore:start */
+));
+/* jshint ignore:end */
