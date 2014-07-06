@@ -59,7 +59,7 @@
   }
 
   function swap(array, a, b) {
-    if (a != b) {
+    if (a !== b) {
       var temp = array[a];
       array[a] = array[b];
       array[b] = temp;

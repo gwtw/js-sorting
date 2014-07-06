@@ -37,4 +37,18 @@ describe("counting-sort", function () {
       })(testHelper.integerTests[i]);
     }
   });
+
+  describe("sort(...)", function () {
+    it("should throw an exception with 1 argument", function () {
+      expect(function () {
+        algorithm.sort(1);
+      }).toThrow("Cannot sort with counting sort with 1 arguments");
+    });
+
+    it("should throw an exception with > 3 arguments", function () {
+      expect(function () {
+        algorithm.sort(1, 2, 3, 4);
+      }).toThrow("Cannot sort with counting sort with 4 arguments");
+    });
+  });
 });
