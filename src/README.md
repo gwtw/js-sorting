@@ -31,9 +31,9 @@
 
 ## Distribution sorts
 
-| Algorithm              | File                 | Time               | Space    |
-|------------------------|----------------------|--------------------|----------|
-| [Counting sort][d01_a] | [1][d01_1]           | Θ(n + k)           | Θ(n + k) |
+| Algorithm              | File                 | Time               | Space    | Notes
+|------------------------|----------------------|--------------------|----------|-------
+| [Counting sort][d01_a] | [1][d01_1]           | Θ(n + k)           | Θ(n + k) | Where k = number of possible values
 
   [d01_a]: http://www.growingwiththeweb.com/2014/05/counting-sort.html
   [d01_1]: https://github.com/Tyriar/js-sorting/blob/master/src/counting-sort.js
