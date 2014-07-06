@@ -1,6 +1,4 @@
 (function (root, factory) {
-  /*jshint -W117 */
-  /*jshint -W003 */
   'use strict';
   if (typeof define === 'function' && define.amd) {
     define([], function () {
@@ -11,14 +9,8 @@
   } else {
     root.bubbleSort = factory();
   }
-  /*jshint +W003 */
-  /*jshint +W117 */
 }(this, function () {
   'use strict';
-
-  var bubbleSort = {
-    sort: sort
-  };
 
   function sort(array, compareFunc) {
     var i, j;
@@ -53,5 +45,5 @@
     return 0;
   }
 
-  return bubbleSort;
+  return { sort: sort };
 }));

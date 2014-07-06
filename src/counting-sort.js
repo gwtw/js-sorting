@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var countingSort = {
-    sort: sort
-  };
-
   // Routes function calls to the correct internal method, call like:
   // sort(array, maxValue)
   // sort(array, minValue, maxValue)
@@ -26,8 +22,8 @@
     if (arguments.length === 3) {
       return sortWithMinAndMax.apply(null, arguments);
     }
-    throw "Cannot sort with counting sort with " + arguments.length +
-      " arguments";
+    throw 'Cannot sort with counting sort with ' + arguments.length +
+      ' arguments';
   }
 
   function sortWithMax(array, maxValue) {
@@ -82,5 +78,5 @@
     return array;
   }
 
-  return countingSort;
+  return { sort: sort };
 }));

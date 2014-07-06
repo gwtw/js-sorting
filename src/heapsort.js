@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var heapsort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var heapSize = array.length;
     buildHeap(array, heapSize, compareFunc);
@@ -75,5 +71,5 @@
     return 0;
   }
 
-  return heapsort;
+  return { sort: sort };
 }));

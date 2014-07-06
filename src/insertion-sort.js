@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var insertionSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var i;
 
@@ -45,5 +41,5 @@
     return 0;
   }
 
-  return insertionSort;
+  return { sort: sort };
 }));

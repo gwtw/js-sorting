@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var selectionSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     for (var i = 0; i < array.length - 1; i++) {
       var minIndex = i;
@@ -53,5 +49,5 @@
     return 0;
   }
 
-  return selectionSort;
+  return { sort: sort };
 }));

@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var mergeSortBottomUp = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var workArray = new Array(array.length);
     var chunkSize = 1;
@@ -30,10 +26,12 @@
     return array;
   }
 
-  function bottomUpMerge(array, leftPosition, chunkSize, workArray, compareFunc) {
+  function bottomUpMerge(
+      array, leftPosition, chunkSize, workArray, compareFunc) {
     var i;
     var rightPosition = leftPosition + chunkSize;
-    var endPosition = Math.min(leftPosition + chunkSize * 2 - 1, array.length - 1);
+    var endPosition = Math.min(leftPosition + chunkSize * 2 - 1,
+                               array.length - 1);
     var leftIndex = leftPosition;
     var rightIndex = rightPosition;
 
@@ -65,5 +63,5 @@
     return 0;
   }
 
-  return mergeSortBottomUp;
+  return { sort: sort };
 }));

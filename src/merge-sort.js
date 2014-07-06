@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var mergeSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     if (array.length <= 1) {
       return array;
@@ -33,7 +29,8 @@
       right[i] = array[i + left.length];
     }
 
-    return merge(sort(left, compareFunc), sort(right, compareFunc), compareFunc);
+    return merge(sort(left, compareFunc),
+                 sort(right, compareFunc), compareFunc);
   }
 
   function merge(left, right, compareFunc) {
@@ -71,5 +68,5 @@
     return 0;
   }
 
-  return mergeSort;
+  return { sort: sort };
 }));

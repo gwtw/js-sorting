@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var cocktailSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var start = -1;
     var end = array.length - 2;
@@ -66,5 +62,5 @@
     return 0;
   }
 
-  return cocktailSort;
+  return { sort: sort };
 }));

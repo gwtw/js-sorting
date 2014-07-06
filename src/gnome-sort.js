@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var gnomeSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var pos = 1;
 
@@ -52,5 +48,5 @@
     return 0;
   }
 
-  return gnomeSort;
+  return { sort: sort };
 }));

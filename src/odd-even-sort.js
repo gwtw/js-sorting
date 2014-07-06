@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var oddEvenSort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     var i;
     var sorted = false;
@@ -59,5 +55,5 @@
     return 0;
   }
 
-  return oddEvenSort;
+  return { sort: sort };
 }));

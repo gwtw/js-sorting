@@ -12,10 +12,6 @@
 }(this, function () {
   'use strict';
 
-  var quicksort = {
-    sort: sort
-  };
-
   function sort(array, compareFunc) {
     sortInternal(array, 0, array.length - 1, compareFunc);
     return array;
@@ -70,5 +66,5 @@
     return 0;
   }
 
-  return quicksort;
+  return { sort: sort };
 }));
