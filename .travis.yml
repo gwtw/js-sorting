@@ -1,6 +1,15 @@
 language: node_js
+
 node_js:
   - "0.11"
   - "0.10"
-  - "0.8"
-  - "0.6"
+
+addons:
+  code_climate:
+    repo_token: c4ae4a641a0990e804a88e3f7ce5ae5631defd8479c7552b0f88b8181807d217 
+
+after_script:
+  - npm install -g grunt-cli
+  - npm install -g codeclimate-test-reporter
+  - grunt coverage
+  - cat coverage/lcov.info | codeclimate

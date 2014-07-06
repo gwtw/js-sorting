@@ -76,6 +76,9 @@ I'd love to get some contributions for other sorting algorithms, if you want to 
 ```
 npm install
 npm test
+
+# generate coverage report in ./coverage/
+grunt coverage
 ```
 
 ## See also
