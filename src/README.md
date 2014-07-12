@@ -4,6 +4,7 @@
 |------------------------|----------------------|--------------------|----------|
 | [Bubble sort][01_a]    | [1][01_1]            | Θ(n^2)             | Θ(1)     |
 |  Cocktail sort         | [1][02_1]            | O(n^2), Ω(n)       | Θ(1)     |
+|  Comb sort             | [1][02_1]            | Ω((n^2)/(2^p))\*   | Θ(1)     |
 |  Gnome sort            | [1][03_1]            | O(n^2), Ω(n)       | Θ(1)     |
 | [Heapsort][04_a]       | [1][04_1]            | Θ(n log n)         | Θ(1)     |
 | [Insertion sort][05_a] | [1][05_1]            | O(n^2), Ω(n)       | Θ(1)     |
@@ -11,6 +12,8 @@
 |  Odd-even sort         | [1][07_1]            | O(n^2), Ω(n)       | Θ(1)     |
 | [Quicksort][08_a]      | [1][08_1]            | O(n^2), Ω(n log n) | O(log n) |
 | [Selection sort][09_a] | [1][09_1]            | O(n^2), Ω(n)       | Θ(1)     |
+
+\* Average case, where p = number of increments
 
   [01_a]: http://www.growingwiththeweb.com/2014/02/bubble-sort.html
   [01_1]: https://github.com/Tyriar/js-sorting/blob/master/src/bubble-sort.js
