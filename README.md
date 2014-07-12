@@ -6,7 +6,7 @@
 
 A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file, wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
 
-To learn more about how each algorithm is implemented have a look at the [technical articles on my blog][2].
+Detailed information on the complexity of each algorithm is located [here][6]. To learn more about how some of the algorithms are implemented, have a look at the [technical articles on my blog][2].
 
 ## Installing
 
@@ -88,8 +88,9 @@ grunt coverage
 
 
 
-[1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
-[2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
-[3]: https://github.com/Tyriar/js-data-structures
-[4]: https://github.com/Tyriar/js-sorting/tree/master/src
-[5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
+  [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
+  [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
+  [3]: https://github.com/Tyriar/js-data-structures
+  [4]: https://github.com/Tyriar/js-sorting/tree/master/src
+  [5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
+  [6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
