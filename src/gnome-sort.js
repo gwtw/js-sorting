@@ -12,41 +12,45 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var pos = 1;
+  var algorithm = {
 
-    while (pos < array.length) {
-      if (compare(array[pos], array[pos-1], compareFunc) >= 0) {
-        pos++;
-      } else {
-        swap(array, pos, pos - 1);
-        if (pos > 1) {
-          pos--;
+    sort: function (array, compareFunc) {
+      var pos = 1;
+
+      while (pos < array.length) {
+        if (algorithm.compare(array[pos], array[pos-1], compareFunc) >= 0) {
+          pos++;
+        } else {
+          algorithm.swap(array, pos, pos - 1);
+          if (pos > 1) {
+            pos--;
+          }
         }
       }
+
+      return array;
+    },
+
+    swap: function (array, a, b) {
+      var temp = array[a];
+      array[a] = array[b];
+      array[b] = temp;
+    },
+
+    compare: function (a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
+      }
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
 
-    return array;
-  }
+  };
 
-  function swap(array, a, b) {
-    var temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));

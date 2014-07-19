@@ -12,10 +12,33 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    sortInternal(array, 0, array.length - 1, compareFunc);
-    return array;
-  }
+  var algorithm = {
+
+    sort: function (array, compareFunc) {
+      sortInternal(array, 0, array.length - 1, compareFunc);
+      return array;
+    },
+
+    swap: function (array, a, b) {
+      var temp = array[a];
+      array[a] = array[b];
+      array[b] = temp;
+    },
+
+    compare: function (a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
+      }
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
+    }
+
+  };
 
   function sortInternal(array, left, right, compareFunc) {
     if (left < right) {
@@ -27,7 +50,9 @@
 
   function partitionRandom(array, left, right, compareFunc) {
     var pivot = left + Math.floor(Math.random() * (right - left));
-    swap(array, right, pivot);
+    if (pivot !== right) {
+      algorithm.swap(array, right, pivot);
+    }
     return partitionRight(array, left, right, compareFunc);
   }
 
@@ -36,35 +61,19 @@
     var mid = left;
 
     for (var i = mid; i < right; i++) {
-      if (compare(array[i], pivot, compareFunc) <= 0) {
-        swap(array, i, mid++);
+      if (algorithm.compare(array[i], pivot, compareFunc) <= 0) {
+        if (i !== mid) {
+          algorithm.swap(array, i, mid);
+        }
+        mid++;
       }
     }
-    swap(array, right, mid);
+    if (right !== mid) {
+      algorithm.swap(array, right, mid);
+    }
 
     return mid;
   }
 
-  function swap(array, a, b) {
-    if (a !== b) {
-      var temp = array[a];
-      array[a] = array[b];
-      array[b] = temp;
-    }
-  }
-
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));

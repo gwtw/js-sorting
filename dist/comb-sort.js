@@ -12,47 +12,51 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var gap = array.length;
-    var shrinkFactor = 1.3;
-    var swapped;
+  var algorithm = {
 
-    while ((gap > 1) || swapped) {
-      if (gap > 1) {
-        gap = Math.floor(gap / shrinkFactor);
-      }
+    sort: function (array, compareFunc) {
+      var gap = array.length;
+      var shrinkFactor = 1.3;
+      var swapped;
 
-      swapped = false;
+      while ((gap > 1) || swapped) {
+        if (gap > 1) {
+          gap = Math.floor(gap / shrinkFactor);
+        }
 
-      for (var i = 0; gap + i < array.length; ++i) {
-        if (compare(array[i], array[i + gap], compareFunc) > 0) {
-          swap(array, i, i + gap);
-          swapped = true;
+        swapped = false;
+
+        for (var i = 0; gap + i < array.length; ++i) {
+          if (algorithm.compare(array[i], array[i + gap], compareFunc) > 0) {
+            algorithm.swap(array, i, i + gap);
+            swapped = true;
+          }
         }
       }
+
+      return array;
+    },
+
+    swap: function (array, a, b) {
+      var temp = array[a];
+      array[a] = array[b];
+      array[b] = temp;
+    },
+
+    compare: function (a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
+      }
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
 
-    return array;
-  }
+  };
 
-  function swap(array, a, b) {
-    var temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));

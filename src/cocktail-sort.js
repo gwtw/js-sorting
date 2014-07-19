@@ -12,55 +12,59 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var start = -1;
-    var end = array.length - 2;
-    var swapped;
-    var i;
+  var algorithm = {
 
-    do {
-      swapped = false;
-      for (i = ++start; i <= end; i++) {
-        if (compare(array[i], array[i + 1], compareFunc) > 0) {
-          swap(array, i, i + 1);
-          swapped = true;
+    sort: function (array, compareFunc) {
+      var start = -1;
+      var end = array.length - 2;
+      var swapped;
+      var i;
+
+      do {
+        swapped = false;
+        for (i = ++start; i <= end; i++) {
+          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+            algorithm.swap(array, i, i + 1);
+            swapped = true;
+          }
         }
-      }
 
-      if (!swapped) {
-        break;
-      }
-
-      swapped = false;
-      for (i = --end; i >= start; i--) {
-        if (compare(array[i], array[i + 1], compareFunc) > 0) {
-          swap(array, i, i + 1);
-          swapped = true;
+        if (!swapped) {
+          break;
         }
+
+        swapped = false;
+        for (i = --end; i >= start; i--) {
+          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+            algorithm.swap(array, i, i + 1);
+            swapped = true;
+          }
+        }
+      } while (swapped);
+
+      return array;
+    },
+
+    swap: function (array, a, b) {
+      var temp = array[a];
+      array[a] = array[b];
+      array[b] = temp;
+    },
+
+    compare: function(a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
       }
-    } while (swapped);
-
-    return array;
-  }
-
-  function swap(array, a, b) {
-    var temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
 
-  return { sort: sort };
+  };
+
+  return algorithm;
 }));
