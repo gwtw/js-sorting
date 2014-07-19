@@ -16,7 +16,7 @@
     "computer science",
     "sorting"
   ],
-  "license": "BSD-2-clause",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",

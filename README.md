@@ -10,15 +10,11 @@ Detailed information on the complexity of each algorithm is located [here][6]. T
 
 ## Installing
 
-**Bower**
-
 ```
+# via bower
 bower install --save js-sorting
-```
 
-**NPM**
-
-```
+# via NPM
 npm install --save js-sorting
 ```
 
@@ -82,6 +78,10 @@ npm test
 grunt coverage
 ```
 
+## License
+
+MIT © [Daniel Imms][7]
+
 ## See also
 
 * [Tyriar/js-data-structures][3]
@@ -94,3 +94,4 @@ grunt coverage
   [4]: https://github.com/Tyriar/js-sorting/tree/master/src
   [5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
   [6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
+  [7]: http://www.growingwiththeweb.com
