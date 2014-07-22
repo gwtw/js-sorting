@@ -10,7 +10,7 @@ testHelper.runIntegerTests = function (algorithm) {
     for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         it(test.it, function () {
-          expect(algorithm(testHelper.getOriginal(test)))
+          expect(algorithm.sort(testHelper.getOriginal(test)))
             .toEqual(testHelper.getSorted(test));
         });
       })(testHelper.integerTests[i]);
@@ -25,7 +25,7 @@ testHelper.runStringTests = function (algorithm) {
     for (var i = 0; i < testHelper.stringTests.length; i++) {
       (function (test) {
         it(test.it, function () {
-          expect(algorithm(testHelper.getOriginal(test)))
+          expect(algorithm.sort(testHelper.getOriginal(test)))
             .toEqual(testHelper.getSorted(test));
         });
       })(testHelper.stringTests[i]);
@@ -39,10 +39,10 @@ testHelper.runCustomComparisonTests = function (algorithm) {
     for (var i = 0; i < testHelper.integerReverseTests.length; i++) {
       (function (test) {
         it(test.it, function () {
-          var compare = function (a, b) {
+          algorithm.compare = function (a, b) {
             return b - a;
           };
-          expect(algorithm(testHelper.getOriginal(test), compare))
+          expect(algorithm.sort(testHelper.getOriginal(test)))
             .toEqual(testHelper.getSorted(test));
         });
       })(testHelper.integerReverseTests[i]);
@@ -50,10 +50,10 @@ testHelper.runCustomComparisonTests = function (algorithm) {
     for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         it(test.it, function () {
-          var compare = function (a, b) {
+          algorithm.compare = function (a, b) {
             return a - b;
           };
-          expect(algorithm(testHelper.getOriginal(test), compare))
+          expect(algorithm.sort(testHelper.getOriginal(test)))
             .toEqual(testHelper.getSorted(test));
         });
       })(testHelper.integerTests[i]);

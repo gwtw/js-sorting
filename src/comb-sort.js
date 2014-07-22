@@ -14,7 +14,7 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       var gap = array.length;
       var shrinkFactor = 1.3;
       var swapped;
@@ -27,7 +27,7 @@
         swapped = false;
 
         for (var i = 0; gap + i < array.length; ++i) {
-          if (algorithm.compare(array[i], array[i + gap], compareFunc) > 0) {
+          if (algorithm.compare(array[i], array[i + gap]) > 0) {
             algorithm.swap(array, i, i + gap);
             swapped = true;
           }
@@ -43,10 +43,7 @@
       array[b] = temp;
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }

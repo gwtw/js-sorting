@@ -14,11 +14,11 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       var pos = 1;
 
       while (pos < array.length) {
-        if (algorithm.compare(array[pos], array[pos-1], compareFunc) >= 0) {
+        if (algorithm.compare(array[pos], array[pos-1]) >= 0) {
           pos++;
         } else {
           algorithm.swap(array, pos, pos - 1);
@@ -37,10 +37,7 @@
       array[b] = temp;
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }

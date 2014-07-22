@@ -14,7 +14,7 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       if (array.length <= 1) {
         return array;
       }
@@ -31,14 +31,10 @@
         right[i] = array[i + left.length];
       }
 
-      return merge(algorithm.sort(left, compareFunc),
-                   algorithm.sort(right, compareFunc), compareFunc);
+      return merge(algorithm.sort(left), algorithm.sort(right));
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }
@@ -50,7 +46,7 @@
 
   };
 
-  function merge(left, right, compareFunc) {
+  function merge(left, right) {
     var result = new Array(left.length + right.length);
     var leftIndex = 0;
     var rightIndex = 0;
@@ -58,7 +54,7 @@
 
     while (leftIndex < left.length || rightIndex < right.length) {
       if (leftIndex < left.length && rightIndex < right.length) {
-        if (algorithm.compare(left[leftIndex], right[rightIndex], compareFunc) <= 0) {
+        if (algorithm.compare(left[leftIndex], right[rightIndex]) <= 0) {
           result[resultIndex++] = left[leftIndex++];
         } else {
           result[resultIndex++] = right[rightIndex++];

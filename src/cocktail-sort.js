@@ -14,7 +14,7 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       var start = -1;
       var end = array.length - 2;
       var swapped;
@@ -23,7 +23,7 @@
       do {
         swapped = false;
         for (i = ++start; i <= end; i++) {
-          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+          if (algorithm.compare(array[i], array[i + 1]) > 0) {
             algorithm.swap(array, i, i + 1);
             swapped = true;
           }
@@ -35,7 +35,7 @@
 
         swapped = false;
         for (i = --end; i >= start; i--) {
-          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+          if (algorithm.compare(array[i], array[i + 1]) > 0) {
             algorithm.swap(array, i, i + 1);
             swapped = true;
           }
@@ -51,10 +51,7 @@
       array[b] = temp;
     },
 
-    compare: function(a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    compare: function(a, b) {
       if (a > b) {
         return 1;
       }

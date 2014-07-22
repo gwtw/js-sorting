@@ -14,8 +14,8 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
-      sortInternal(array, 0, array.length - 1, compareFunc);
+    sort: function (array) {
+      sortInternal(array, 0, array.length - 1);
       return array;
     },
 
@@ -25,10 +25,7 @@
       array[b] = temp;
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }
@@ -40,28 +37,28 @@
 
   };
 
-  function sortInternal(array, left, right, compareFunc) {
+  function sortInternal(array, left, right) {
     if (left < right) {
-      var pivot = partitionRandom(array, left, right, compareFunc);
-      sortInternal(array, left, pivot - 1, compareFunc);
-      sortInternal(array, pivot + 1, right, compareFunc);
+      var pivot = partitionRandom(array, left, right);
+      sortInternal(array, left, pivot - 1);
+      sortInternal(array, pivot + 1, right);
     }
   }
 
-  function partitionRandom(array, left, right, compareFunc) {
+  function partitionRandom(array, left, right) {
     var pivot = left + Math.floor(Math.random() * (right - left));
     if (pivot !== right) {
       algorithm.swap(array, right, pivot);
     }
-    return partitionRight(array, left, right, compareFunc);
+    return partitionRight(array, left, right);
   }
 
-  function partitionRight(array, left, right, compareFunc) {
+  function partitionRight(array, left, right) {
     var pivot = array[right];
     var mid = left;
 
     for (var i = mid; i < right; i++) {
-      if (algorithm.compare(array[i], pivot, compareFunc) <= 0) {
+      if (algorithm.compare(array[i], pivot) <= 0) {
         if (i !== mid) {
           algorithm.swap(array, i, mid);
         }
