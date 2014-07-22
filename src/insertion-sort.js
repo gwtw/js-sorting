@@ -25,13 +25,13 @@
           array[indexHole] = array[--indexHole];
         }
         array[indexHole] = item;
-        shift(i, indexHole);
+        algorithm.shift(i, indexHole);
       }
 
       return array;
     },
 
-    shift: function () { },
+    shift: function (from, to) { },
 
     compare: function (a, b) {
       if (a > b) {
