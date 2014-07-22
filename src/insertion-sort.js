@@ -25,10 +25,13 @@
           array[indexHole] = array[--indexHole];
         }
         array[indexHole] = item;
+        shift(i, indexHole);
       }
 
       return array;
     },
+
+    shift: function () { },
 
     compare: function (a, b) {
       if (a > b) {
