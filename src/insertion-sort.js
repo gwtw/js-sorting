@@ -31,8 +31,15 @@
       return array;
     },
 
+    // Called when an element is being shifted from index `from` to index `to`,
+    // swapping all elements in-between.
+    //
+    // Example:
+    // b, c, d, e, a -> shift(4, 0) -> a, b, c, d, e
     shift: function (from, to) { },
 
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
     compare: function (a, b) {
       if (a > b) {
         return 1;

@@ -28,6 +28,8 @@
       return array;
     },
 
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
     compare: function (a, b) {
       if (a > b) {
         return 1;

@@ -32,12 +32,15 @@
       return array;
     },
 
+    // Swaps elements at indexes `a` and `b`.
     swap: function (array, a, b) {
       var temp = array[a];
       array[a] = array[b];
       array[b] = temp;
     },
 
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
     compare: function (a, b) {
       if (a > b) {
         return 1;
