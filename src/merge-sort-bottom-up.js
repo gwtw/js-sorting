@@ -12,19 +12,36 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var workArray = new Array(array.length);
-    var chunkSize = 1;
-    while (chunkSize < array.length) {
-      var i = 0;
-      while (i < array.length - chunkSize) {
-        bottomUpMerge(array, i, chunkSize, workArray, compareFunc);
-        i += chunkSize * 2;
+  var algorithm = {
+
+    sort: function (array, compareFunc) {
+      var workArray = new Array(array.length);
+      var chunkSize = 1;
+      while (chunkSize < array.length) {
+        var i = 0;
+        while (i < array.length - chunkSize) {
+          bottomUpMerge(array, i, chunkSize, workArray, compareFunc);
+          i += chunkSize * 2;
+        }
+        chunkSize *= 2;
       }
-      chunkSize *= 2;
+      return array;
+    },
+
+    compare: function (a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
+      }
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
-    return array;
-  }
+
+  };
 
   function bottomUpMerge(
       array, leftPosition, chunkSize, workArray, compareFunc) {
@@ -38,7 +55,7 @@
     for (i = 0; i <= endPosition - leftPosition; i++) {
       if (leftIndex < rightPosition &&
           (rightIndex > endPosition ||
-          compare(array[leftIndex], array[rightIndex], compareFunc) <= 0)) {
+          algorithm.compare(array[leftIndex], array[rightIndex], compareFunc) <= 0)) {
         workArray[i] = array[leftIndex++];
       } else {
         workArray[i] = array[rightIndex++];
@@ -50,18 +67,5 @@
     }
   }
 
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));

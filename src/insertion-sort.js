@@ -12,34 +12,38 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var i;
+  var algorithm = {
 
-    for (i = 1; i < array.length; i++) {
-      var item = array[i];
-      var indexHole = i;
-      while (indexHole > 0 &&
-          compare(array[indexHole - 1], item, compareFunc) > 0) {
-        array[indexHole] = array[--indexHole];
+    sort: function (array, compareFunc) {
+      var i;
+
+      for (i = 1; i < array.length; i++) {
+        var item = array[i];
+        var indexHole = i;
+        while (indexHole > 0 &&
+            algorithm.compare(array[indexHole - 1], item, compareFunc) > 0) {
+          array[indexHole] = array[--indexHole];
+        }
+        array[indexHole] = item;
       }
-      array[indexHole] = item;
+
+      return array;
+    },
+
+    compare: function (a, b, compareFunc) {
+      if (compareFunc) {
+        return compareFunc(a, b);
+      }
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
 
-    return array;
-  }
+  };
 
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));
