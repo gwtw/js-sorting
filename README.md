@@ -1,8 +1,9 @@
 # js-sorting
 
-[![Build Status](http://img.shields.io/travis/Tyriar/js-sorting.svg)](http://travis-ci.org/Tyriar/js-sorting)
-[![Code climate](http://img.shields.io/codeclimate/github/Tyriar/js-sorting.svg)](https://codeclimate.com/github/Tyriar/js-sorting)
-[![Code climate](http://img.shields.io/codeclimate/coverage/github/Tyriar/js-sorting.svg)](https://codeclimate.com/github/Tyriar/js-sorting)
+[![NPM version](http://img.shields.io/npm/v/js-sorting.svg?style=flat)](https://www.npmjs.org/package/js-sorting)
+[![Build Status](http://img.shields.io/travis/Tyriar/js-sorting.svg?style=flat)](http://travis-ci.org/Tyriar/js-sorting)
+[![Code climate](http://img.shields.io/codeclimate/github/Tyriar/js-sorting.svg?style=flat)](https://codeclimate.com/github/Tyriar/js-sorting)
+[![Code coverage](http://img.shields.io/codeclimate/coverage/github/Tyriar/js-sorting.svg?style=flat)](https://codeclimate.com/github/Tyriar/js-sorting)
 
 A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file, wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
 
