@@ -53,7 +53,7 @@ var list = [
   { 'firstname': 'John',   'lastname': 'Brown'   },
   { 'firstname': 'Mary',   'lastname': 'Harris'  },
 ];
-mergeSort.sort(list, function (a, b) {
+mergeSort.compare = function (a, b) {
   // Sort by first name first
   if (a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
   if (a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
@@ -61,8 +61,29 @@ mergeSort.sort(list, function (a, b) {
   if (a.lastname.toLowerCase() < b.lastname.toLowerCase()) return -1;
   if (a.lastname.toLowerCase() > b.lastname.toLowerCase()) return 1;
   return 0;
-});
+};
+mergeSort.sort(list);
 ```
+
+### Observe array changes
+
+In order to support [one of my other projects][8], various methods are exposed for each sort that allow observation of internal array changes. This can be done by wrapping the functions like so:
+
+```javascript
+var originalCompare = bubbleSort.compare;
+bubbleSort.compare = function (a, b) {
+  alert('Comparing value at index "' + a + '" with "' + b + '"');
+  originalCompare(array, a, b);
+};
+
+var originalSwap = bubbleSort.swap;
+bubbleSort.swap = function (array, a, b) {
+  alert('Swapping "' + array[a] + '" (i=' + a + ') with "' + array[b] + '" (i=' + b + ')');
+  originalSwap(array, a, b);
+};
+```
+
+The functions available are different for different sorts since not all sorts only do compares and swaps to transform the array.
 
 ## Contributing
 
@@ -95,3 +116,4 @@ MIT © [Daniel Imms][7]
   [5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
   [6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
   [7]: http://www.growingwiththeweb.com
+  [8]: https://github.com/Tyriar/sorting-visualiser
