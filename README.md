@@ -41,9 +41,10 @@ See [the source files][4] for a list sorts available and their public interfaces
 mergeSort.sort([5, 3, 2, 4, 1]);
 
 // Sort in reverse
-mergeSort.sort([5, 3, 2, 4, 1], function (a, b) {
+mergeSort.compare = function (a, b) {
     return b - a;
-});
+};
+mergeSort.sort([5, 3, 2, 4, 1]);
 
 // Sort complex objects
 var list = [
@@ -65,7 +66,7 @@ mergeSort.compare = function (a, b) {
 mergeSort.sort(list);
 ```
 
-### Observe array changes
+### Observing array changes
 
 In order to support [one of my other projects][8], various methods are exposed for each sort that allow observation of internal array changes. This can be done by wrapping the functions like so:
 
@@ -83,7 +84,7 @@ bubbleSort.swap = function (array, a, b) {
 };
 ```
 
-The functions available are different for different sorts since not all sorts only do compares and swaps to transform the array.
+The functions available are different for each algorithm since not all sorts only do compares and swaps to transform the array in a standard way. For example [insertion sort exposes a `shift` function][9] which shifts an item to a particular index. While this is the same as swapping the item with the adjacent item until it reaches the index, it is achieved in half the number of assignments by only assigning the item being shifted once. The way that this operation is visualised is quite different to just x swaps.
 
 ## Contributing
 
@@ -117,3 +118,4 @@ MIT © [Daniel Imms][7]
   [6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
   [7]: http://www.growingwiththeweb.com
   [8]: https://github.com/Tyriar/sorting-visualiser
+  [9]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
