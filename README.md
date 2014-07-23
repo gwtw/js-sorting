@@ -79,7 +79,8 @@ bubbleSort.compare = function (a, b) {
 
 var originalSwap = bubbleSort.swap;
 bubbleSort.swap = function (array, a, b) {
-  alert('Swapping "' + array[a] + '" (i=' + a + ') with "' + array[b] + '" (i=' + b + ')');
+  alert('Swapping "' + array[a] + '" (i=' + a + ') with "' +
+                       array[b] + '" (i=' + b + ')');
   originalSwap(array, a, b);
 };
 ```
