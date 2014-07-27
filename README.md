@@ -10,11 +10,11 @@ Detailed information on the complexity of each algorithm is located [here][6]. T
 
 ## Installing
 
-```
+```bash
 # via bower
 bower install --save js-sorting
 
-# via NPM
+# via npm
 npm install --save js-sorting
 ```
 
