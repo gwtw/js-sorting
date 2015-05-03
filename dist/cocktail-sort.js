@@ -1,3 +1,4 @@
+/*! js-sorting | (c) 2015 Daniel Imms | github.com/Tyriar/js-sorting/blob/master/LICENSE */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -14,7 +15,7 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       var start = -1;
       var end = array.length - 2;
       var swapped;
@@ -23,7 +24,7 @@
       do {
         swapped = false;
         for (i = ++start; i <= end; i++) {
-          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+          if (algorithm.compare(array[i], array[i + 1]) > 0) {
             algorithm.swap(array, i, i + 1);
             swapped = true;
           }
@@ -35,7 +36,7 @@
 
         swapped = false;
         for (i = --end; i >= start; i--) {
-          if (algorithm.compare(array[i], array[i + 1], compareFunc) > 0) {
+          if (algorithm.compare(array[i], array[i + 1]) > 0) {
             algorithm.swap(array, i, i + 1);
             swapped = true;
           }
@@ -45,16 +46,16 @@
       return array;
     },
 
+    // Swaps elements at indexes `a` and `b`.
     swap: function (array, a, b) {
       var temp = array[a];
       array[a] = array[b];
       array[b] = temp;
     },
 
-    compare: function(a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
+    compare: function(a, b) {
       if (a > b) {
         return 1;
       }

@@ -1,3 +1,4 @@
+/*! js-sorting | (c) 2015 Daniel Imms | github.com/Tyriar/js-sorting/blob/master/LICENSE */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -12,34 +13,45 @@
 }(this, function () {
   'use strict';
 
-  function sort(array, compareFunc) {
-    var i;
+  var algorithm = {
 
-    for (i = 1; i < array.length; i++) {
-      var item = array[i];
-      var indexHole = i;
-      while (indexHole > 0 &&
-          compare(array[indexHole - 1], item, compareFunc) > 0) {
-        array[indexHole] = array[--indexHole];
+    sort: function (array) {
+      var i;
+
+      for (i = 1; i < array.length; i++) {
+        var item = array[i];
+        var indexHole = i;
+        while (indexHole > 0 &&
+            algorithm.compare(array[indexHole - 1], item) > 0) {
+          array[indexHole] = array[--indexHole];
+        }
+        array[indexHole] = item;
+        algorithm.shift(i, indexHole);
       }
-      array[indexHole] = item;
+
+      return array;
+    },
+
+    // Called when an element is being shifted from index `from` to index `to`,
+    // swapping all elements in-between.
+    //
+    // Example:
+    // b, c, d, e, a -> shift(4, 0) -> a, b, c, d, e
+    shift: function (from, to) { },
+
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
+    compare: function (a, b) {
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
     }
 
-    return array;
-  }
+  };
 
-  function compare(a, b, compareFunc) {
-    if (compareFunc) {
-      return compareFunc(a, b);
-    }
-    if (a > b) {
-      return 1;
-    }
-    if (a < b) {
-      return -1;
-    }
-    return 0;
-  }
-
-  return { sort: sort };
+  return algorithm;
 }));

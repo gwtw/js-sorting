@@ -1,3 +1,4 @@
+/*! js-sorting | (c) 2015 Daniel Imms | github.com/Tyriar/js-sorting/blob/master/LICENSE */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -12,19 +13,23 @@
 }(this, function () {
   'use strict';
 
-  // Routes function calls to the correct internal method, call like:
-  // sort(array, maxValue)
-  // sort(array, minValue, maxValue)
-  function sort() {
-    if (arguments.length === 2) {
-      return sortWithMax.apply(null, arguments);
+  var algorithm = {
+
+    // Routes function calls to the correct internal method, call like:
+    // sort(array, maxValue)
+    // sort(array, minValue, maxValue)
+    sort: function () {
+      if (arguments.length === 2) {
+        return sortWithMax.apply(null, arguments);
+      }
+      if (arguments.length === 3) {
+        return sortWithMinAndMax.apply(null, arguments);
+      }
+      throw 'Cannot sort with counting sort with ' + arguments.length +
+        ' arguments';
     }
-    if (arguments.length === 3) {
-      return sortWithMinAndMax.apply(null, arguments);
-    }
-    throw 'Cannot sort with counting sort with ' + arguments.length +
-      ' arguments';
-  }
+
+  };
 
   function sortWithMax(array, maxValue) {
     var buckets = new Array(maxValue + 1);
@@ -78,5 +83,5 @@
     return array;
   }
 
-  return { sort: sort };
+  return algorithm;
 }));

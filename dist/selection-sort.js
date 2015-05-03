@@ -1,3 +1,4 @@
+/*! js-sorting | (c) 2015 Daniel Imms | github.com/Tyriar/js-sorting/blob/master/LICENSE */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -14,12 +15,12 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
+    sort: function (array) {
       for (var i = 0; i < array.length - 1; i++) {
         var minIndex = i;
 
         for (var j = i + 1; j < array.length; j++) {
-          if (algorithm.compare(array[j], array[minIndex], compareFunc) < 0) {
+          if (algorithm.compare(array[j], array[minIndex]) < 0) {
             minIndex = j;
           }
         }
@@ -32,16 +33,16 @@
       return array;
     },
 
+    // Swaps elements at indexes `a` and `b`.
     swap: function (array, a, b) {
       var temp = array[a];
       array[a] = array[b];
       array[b] = temp;
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }

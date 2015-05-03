@@ -1,3 +1,4 @@
+/*! js-sorting | (c) 2015 Daniel Imms | github.com/Tyriar/js-sorting/blob/master/LICENSE */
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -14,21 +15,21 @@
 
   var algorithm = {
 
-    sort: function (array, compareFunc) {
-      sortInternal(array, 0, array.length - 1, compareFunc);
+    sort: function (array) {
+      sortInternal(array, 0, array.length - 1);
       return array;
     },
 
+    // Swaps elements at indexes `a` and `b`.
     swap: function (array, a, b) {
       var temp = array[a];
       array[a] = array[b];
       array[b] = temp;
     },
 
-    compare: function (a, b, compareFunc) {
-      if (compareFunc) {
-        return compareFunc(a, b);
-      }
+    // Compares elements at indexes `a` and `b`. Returns 0 if they're equal, a
+    // positive number if `a` is larger or a negative number if `b` is larger.
+    compare: function (a, b) {
       if (a > b) {
         return 1;
       }
@@ -40,28 +41,28 @@
 
   };
 
-  function sortInternal(array, left, right, compareFunc) {
+  function sortInternal(array, left, right) {
     if (left < right) {
-      var pivot = partitionRandom(array, left, right, compareFunc);
-      sortInternal(array, left, pivot - 1, compareFunc);
-      sortInternal(array, pivot + 1, right, compareFunc);
+      var pivot = partitionRandom(array, left, right);
+      sortInternal(array, left, pivot - 1);
+      sortInternal(array, pivot + 1, right);
     }
   }
 
-  function partitionRandom(array, left, right, compareFunc) {
+  function partitionRandom(array, left, right) {
     var pivot = left + Math.floor(Math.random() * (right - left));
     if (pivot !== right) {
       algorithm.swap(array, right, pivot);
     }
-    return partitionRight(array, left, right, compareFunc);
+    return partitionRight(array, left, right);
   }
 
-  function partitionRight(array, left, right, compareFunc) {
+  function partitionRight(array, left, right) {
     var pivot = array[right];
     var mid = left;
 
     for (var i = mid; i < right; i++) {
-      if (algorithm.compare(array[i], pivot, compareFunc) <= 0) {
+      if (algorithm.compare(array[i], pivot) <= 0) {
         if (i !== mid) {
           algorithm.swap(array, i, mid);
         }
