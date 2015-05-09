@@ -9,36 +9,7 @@ module.exports = function(grunt) {
   grunt.config('clean', {
     dist: 'dist'
   });
-
-  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
-  grunt.config('jasmine_node', {
-    coverage: {
-      /*coverage: { },
-      options: {
-        extensions: 'js',
-        specNameMatcher: '.*-spec',
-        captureExceptions: true
-      }*/
-      options: {
-        coverage: {},
-        forceExit: true,
-        match: '.',
-        matchAll: false,
-        specFolders: ['test'],
-        extensions: 'js',
-        specNameMatcher: '-spec',
-        captureExceptions: true,
-        junitreport: {
-          report: false,
-          savePath : './build/reports/jasmine/',
-          useDotNotation: true,
-          consolidate: true
-        }
-      },
-      src: ['src/*.js']
-    }
-  });
-
+  
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.config('copy', {
     dist: {
@@ -66,6 +37,29 @@ module.exports = function(grunt) {
           return dest + src.replace(/\.js$/, '.min.js');
         }
       }]
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
+  grunt.config('jasmine_node', {
+    coverage: {
+      options: {
+        coverage: {},
+        forceExit: true,
+        match: '.',
+        matchAll: false,
+        specFolders: ['test'],
+        extensions: 'js',
+        specNameMatcher: 'spec',
+        captureExceptions: true,
+        junitreport: {
+          report: false,
+          savePath : './build/reports/jasmine/',
+          useDotNotation: true,
+          consolidate: true
+        }
+      },
+      src: ['**/*.js']
     }
   });
 
