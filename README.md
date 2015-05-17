@@ -4,7 +4,7 @@
 [![Code climate](http://img.shields.io/codeclimate/github/Tyriar/js-sorting.svg?style=flat)](https://codeclimate.com/github/Tyriar/js-sorting)
 [![Code coverage](http://img.shields.io/codeclimate/coverage/github/Tyriar/js-sorting.svg?style=flat)](https://codeclimate.com/github/Tyriar/js-sorting)
 
-A collection of sorting algorithms written in JavaScript. Each algorithm is enclosed in its own file, wrapped in a [Universal Module Definition (UMD)][1] API to make it easier to use across multiple platforms.
+A collection of sorting algorithms written in JavaScript.
 
 Detailed information on the complexity of each algorithm is located [here][6]. To learn more about how some of the algorithms are implemented, have a look at the [technical articles on my blog][2].
 
@@ -18,25 +18,13 @@ bower install --save js-sorting
 npm install --save js-sorting
 ```
 
-## Including
-
-**Browser**
-
-```html
-<script src="bower_components/js-sorting/src/merge-sort.js"></script>
-```
-
-**Node.JS**
-
-```javascript
-var mergeSort = require("merge-sort");
-```
-
 ## Usage
 
 See [the source files][4] for a list sorts available and their public interfaces, Here is an example for the [merge sort][5].
 
 ```javascript
+var mergeSort = require("merge-sort");
+
 // Sort normally
 mergeSort.sort([5, 3, 2, 4, 1]);
 
