@@ -5,38 +5,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json')
   });
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.config('clean', {
-    dist: 'dist'
-  });
-  
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.config('copy', {
+  grunt.loadNpmTasks('grunt-eslint');
+  grunt.config('eslint', {
     dist: {
-      files: [{
-        expand: true,
-        flatten: true,
-        src: 'src/*',
-        dest: 'dist/'
-      }]
-    }
-  });
-
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.config('uglify', {
-    options: {
-      preserveComments: 'some'
-    },
-    dist: {
-      files: [{
-        expand: true,
-        cwd: 'src',
-        src: '**/*.js',
-        dest: 'dist/',
-        rename: function (dest, src) {
-          return dest + src.replace(/\.js$/, '.min.js');
-        }
-      }]
+      options: {
+        configFile: '.eslintrc',
+      },
+      src: ['src/*.js']
     }
   });
 
@@ -63,18 +38,12 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dist', [
-    'clean:dist',
-    'copy:dist',
-    'uglify:dist'
-  ]);
-
   grunt.registerTask('coverage', [
     'jasmine_node:coverage'
   ]);
 
   grunt.registerTask('default', [
-    'dist',
+    'eslint',
     'coverage'
   ]);
 };
