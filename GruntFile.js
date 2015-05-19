@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       options: {
         configFile: '.eslintrc',
       },
-      src: ['src/*.js']
+      src: ['lib/**/*.js']
     }
   });
 
@@ -35,6 +35,16 @@ module.exports = function(grunt) {
         }
       },
       src: ['**/*.js']
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.config('jsdoc', {
+    dist : {
+      src: ['index.js', 'lib/**/*.js', 'test/**/*.js'],
+      options: {
+        destination: 'doc'
+      }
     }
   });
 

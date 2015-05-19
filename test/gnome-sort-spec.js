@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/gnome-sort");
+var algorithm = require("../index").gnomeSort;
 
 describe("gnome-sort", function () {
   testHelper.runIntegerTests(algorithm);

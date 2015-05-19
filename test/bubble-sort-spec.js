@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/bubble-sort");
+var algorithm = require("../index").bubbleSort;
 
 describe("bubble-sort", function () {
   testHelper.runIntegerTests(algorithm);

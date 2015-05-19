@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/odd-even-sort");
+var algorithm = require("../index").oddEvenSort;
 
 describe("odd-even-sort", function () {
   testHelper.runIntegerTests(algorithm);

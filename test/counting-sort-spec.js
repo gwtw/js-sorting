@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/counting-sort");
+var algorithm = require("../index").countingSort;
 
 describe("counting-sort", function () {
   // sort(array, maxValue) for arrays with non-negative values only.
@@ -13,7 +13,7 @@ describe("counting-sort", function () {
 
         if (minValue >= 0) {
           it(test.it, function () {
-            expect(algorithm.sort(original, maxValue))
+            expect(algorithm(original, maxValue))
               .toEqual(sorted);
           });
         }
@@ -31,7 +31,7 @@ describe("counting-sort", function () {
         var maxValue = sorted[sorted.length - 1];
 
         it(test.it, function () {
-          expect(algorithm.sort(original, minValue, maxValue))
+          expect(algorithm(original, minValue, maxValue))
             .toEqual(sorted);
         });
       })(testHelper.integerTests[i]);
@@ -41,13 +41,13 @@ describe("counting-sort", function () {
   describe("sort(...)", function () {
     it("should throw an exception with 1 argument", function () {
       expect(function () {
-        algorithm.sort(1);
+        algorithm(1);
       }).toThrow("Cannot sort with counting sort with 1 arguments");
     });
 
     it("should throw an exception with > 3 arguments", function () {
       expect(function () {
-        algorithm.sort(1, 2, 3, 4);
+        algorithm(1, 2, 3, 4);
       }).toThrow("Cannot sort with counting sort with 4 arguments");
     });
   });

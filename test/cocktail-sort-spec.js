@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/cocktail-sort");
+var algorithm = require("../index").cocktailSort;
 
 describe("cocktail-sort", function () {
   testHelper.runIntegerTests(algorithm);

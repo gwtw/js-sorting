@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/merge-sort-bottom-up");
+var algorithm = require("../index").mergeSortBottomUp;
 
 describe("merge-sort-bottom-up", function () {
   testHelper.runIntegerTests(algorithm);

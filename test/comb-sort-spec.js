@@ -1,5 +1,5 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../src/comb-sort");
+var algorithm = require("../index").combSort;
 
 describe("comb-sort", function () {
   testHelper.runIntegerTests(algorithm);

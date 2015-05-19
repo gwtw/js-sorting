@@ -11,7 +11,6 @@ Detailed information on the complexity of each algorithm is located [here][6]. T
 ## Installing
 
 ```bash
-# via npm
 npm install --save js-sorting
 ```
 
@@ -20,16 +19,16 @@ npm install --save js-sorting
 See [the source files][4] for a list sorts available and their public interfaces, Here is an example for the [merge sort][5].
 
 ```javascript
-var mergeSort = require("merge-sort");
+var mergeSort = require("js-sorting").mergeSort;
 
 // Sort normally
-mergeSort.sort([5, 3, 2, 4, 1]);
+mergeSort([5, 3, 2, 4, 1]);
 
 // Sort in reverse
-mergeSort.compare = function (a, b) {
+var reverseCompare = function (a, b) {
     return b - a;
 };
-mergeSort.sort([5, 3, 2, 4, 1]);
+mergeSort([5, 3, 2, 4, 1], reverseCompare);
 
 // Sort complex objects
 var list = [
@@ -39,7 +38,7 @@ var list = [
   { 'firstname': 'John',   'lastname': 'Brown'   },
   { 'firstname': 'Mary',   'lastname': 'Harris'  },
 ];
-mergeSort.compare = function (a, b) {
+var complexNameSort = function (a, b) {
   // Sort by first name first
   if (a.firstname.toLowerCase() < b.firstname.toLowerCase()) return -1;
   if (a.firstname.toLowerCase() > b.firstname.toLowerCase()) return 1;
@@ -48,7 +47,7 @@ mergeSort.compare = function (a, b) {
   if (a.lastname.toLowerCase() > b.lastname.toLowerCase()) return 1;
   return 0;
 };
-mergeSort.sort(list);
+mergeSort.sort(list, complexNameSort);
 ```
 
 ### Observing array changes
