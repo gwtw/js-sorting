@@ -74,6 +74,19 @@ testHelper.runSwapObserverTests = function (algorithm) {
   });
 };
 
+testHelper.runShiftObserverTests = function (algorithm) {
+  describe('shift observer tests', function () {
+    it('should call the shift observer', function () {
+      var shiftWrapper = {
+        observer: function () {}
+      };
+      spyOn(shiftWrapper, 'observer');
+      algorithm([5, 4, 1, 2, 3], undefined, shiftWrapper.observer)
+      expect(shiftWrapper.observer).toHaveBeenCalled();
+    });
+  });
+};
+
 // Only test on copies of the test arrays
 testHelper.getOriginal = function (test) {
   return test.original.slice(0);

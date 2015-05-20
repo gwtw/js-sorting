@@ -5,4 +5,5 @@ describe("insertion-sort", function () {
   testHelper.runIntegerTests(algorithm);
   testHelper.runStringTests(algorithm);
   testHelper.runCustomComparisonTests(algorithm);
+  testHelper.runShiftObserverTests(algorithm);
 });
