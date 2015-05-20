@@ -4,5 +4,6 @@ var algorithm = require("../index").cocktailSort;
 describe("cocktail-sort", function () {
   testHelper.runIntegerTests(algorithm);
   testHelper.runStringTests(algorithm);
-  testHelper.runCustomComparisonTests(algorithm)
+  testHelper.runCustomComparisonTests(algorithm);
+  testHelper.runSwapObserverTests(algorithm);
 });

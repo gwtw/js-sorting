@@ -5,4 +5,5 @@ describe("comb-sort", function () {
   testHelper.runIntegerTests(algorithm);
   testHelper.runStringTests(algorithm);
   testHelper.runCustomComparisonTests(algorithm);
+  testHelper.runSwapObserverTests(algorithm);
 });

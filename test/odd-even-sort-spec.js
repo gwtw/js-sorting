@@ -5,4 +5,5 @@ describe("odd-even-sort", function () {
   testHelper.runIntegerTests(algorithm);
   testHelper.runStringTests(algorithm);
   testHelper.runCustomComparisonTests(algorithm);
+  testHelper.runSwapObserverTests(algorithm);
 });

@@ -61,6 +61,19 @@ testHelper.runCustomComparisonTests = function (algorithm) {
   });
 };
 
+testHelper.runSwapObserverTests = function (algorithm) {
+  describe('swap observer tests', function () {
+    it('should call the swap observer', function () {
+      var swapWrapper = {
+        observer: function () {}
+      };
+      spyOn(swapWrapper, 'observer');
+      algorithm([2, 1], undefined, swapWrapper.observer)
+      expect(swapWrapper.observer).toHaveBeenCalled();
+    });
+  });
+};
+
 // Only test on copies of the test arrays
 testHelper.getOriginal = function (test) {
   return test.original.slice(0);
