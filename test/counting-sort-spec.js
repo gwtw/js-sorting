@@ -22,7 +22,7 @@ describe("counting-sort", function () {
   });
 
   // Test sort(array, minValue, maxValue) for arrays with a specific range.
-  describe("sort(array, minValue, maxValue)", function () {
+  describe("sort(array, maxValue, minValue)", function () {
     for (var i = 0; i < testHelper.integerTests.length; i++) {
       (function (test) {
         var sorted = testHelper.getSorted(test);
@@ -31,7 +31,7 @@ describe("counting-sort", function () {
         var maxValue = sorted[sorted.length - 1];
 
         it(test.it, function () {
-          expect(algorithm(original, minValue, maxValue))
+          expect(algorithm(original, maxValue, minValue))
             .toEqual(sorted);
         });
       })(testHelper.integerTests[i]);
