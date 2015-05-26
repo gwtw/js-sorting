@@ -19,4 +19,4 @@ module.exports = {
   oddEvenSort: require('./lib/odd-even-sort'),
   quicksort: require('./lib/quicksort'),
   selectionSort: require('./lib/selection-sort')
-}
+};
