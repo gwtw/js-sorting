@@ -7,6 +7,7 @@
 'use strict';
 
 module.exports = {
+  bubbleSortOptimised: require('./lib/bubble-sort-optimised'),
   bubbleSort: require('./lib/bubble-sort'),
   cocktailSort: require('./lib/cocktail-sort'),
   combSort: require('./lib/comb-sort'),
