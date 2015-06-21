@@ -85,22 +85,26 @@ npm test
 grunt coverage
 ```
 
+
+
 ## License
 
-MIT © [Daniel Imms][7]
+MIT © [Daniel Imms](http://www.growingwiththeweb.com)
+
+
 
 ## See also
 
-* [Tyriar/js-data-structures][3]
+* [js-data-structures](https://github.com/Tyriar/js-data-structures)
+* [js-design-patterns](https://github.com/Tyriar/js-design-patterns)
+* [js-interview-questions](https://github.com/Tyriar/js-interview-questions)
 
 
 
-  [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
-  [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
-  [3]: https://github.com/Tyriar/js-data-structures
-  [4]: https://github.com/Tyriar/js-sorting/tree/master/src
-  [5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
-  [6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
-  [7]: http://www.growingwiththeweb.com
-  [8]: https://github.com/Tyriar/sorting-visualiser
-  [9]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
+[1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
+[2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
+[4]: https://github.com/Tyriar/js-sorting/tree/master/src
+[5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
+[6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
+[8]: https://github.com/Tyriar/sorting-visualiser
+[9]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
