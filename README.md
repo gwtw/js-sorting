@@ -103,8 +103,8 @@ MIT © [Daniel Imms](http://www.growingwiththeweb.com)
 
 [1]: https://github.com/umdjs/umd/blob/master/returnExportsGlobal.js
 [2]: http://www.growingwiththeweb.com/p/explore.html?t=Sorting
-[4]: https://github.com/Tyriar/js-sorting/tree/master/src
-[5]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
-[6]: https://github.com/Tyriar/js-sorting/blob/master/src/README.md
+[4]: lib
+[5]: lib/merge-sort.js
+[6]: lib/README.md
 [8]: https://github.com/Tyriar/sorting-visualiser
-[9]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
+[9]: lib/insertion-sort.js
