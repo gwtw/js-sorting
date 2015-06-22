@@ -16,7 +16,7 @@ npm install --save js-sorting
 
 ## Usage
 
-See [the source files][4] for a list sorts available and their public interfaces, Here is an example for the [merge sort][5].
+See [the source files][4] for a list sorts available and their public interfaces, Here is an example for [merge sort][5].
 
 ```javascript
 var mergeSort = require("js-sorting").mergeSort;
