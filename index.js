@@ -9,6 +9,7 @@
 module.exports = {
   bubbleSortOptimised: require('./lib/bubble-sort-optimised'),
   bubbleSort: require('./lib/bubble-sort'),
+  bucketSort: require('./lib/bucket-sort'),
   cocktailSort: require('./lib/cocktail-sort'),
   combSort: require('./lib/comb-sort'),
   countingSort: require('./lib/counting-sort'),
