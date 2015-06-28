@@ -16,22 +16,22 @@
 \* Average case, where p = number of increments
 
   [01_a]: http://www.growingwiththeweb.com/2014/02/bubble-sort.html
-  [01_1]: https://github.com/Tyriar/js-sorting/blob/master/src/bubble-sort.js
-  [02_1]: https://github.com/Tyriar/js-sorting/blob/master/src/cocktail-sort.js
-  [03_1]: https://github.com/Tyriar/js-sorting/blob/master/src/comb-sort.js
-  [04_1]: https://github.com/Tyriar/js-sorting/blob/master/src/gnome-sort.js
+  [01_1]: bubble-sort.js
+  [02_1]: cocktail-sort.js
+  [03_1]: comb-sort.js
+  [04_1]: gnome-sort.js
   [05_a]: http://www.growingwiththeweb.com/2012/11/algorithm-heapsort.html
-  [05_1]: https://github.com/Tyriar/js-sorting/blob/master/src/heapsort.js
+  [05_1]: heapsort.js
   [06_a]: http://www.growingwiththeweb.com/2012/11/algorithm-insertion-sort.html
-  [06_1]: https://github.com/Tyriar/js-sorting/blob/master/src/insertion-sort.js
+  [06_1]: insertion-sort.js
   [07_a]: http://www.growingwiththeweb.com/2012/11/algorithm-merge-sort.html
-  [07_1]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort.js
-  [07_2]: https://github.com/Tyriar/js-sorting/blob/master/src/merge-sort-bottom-up.js
-  [08_1]: https://github.com/Tyriar/js-sorting/blob/master/src/odd-even-sort.js
+  [07_1]: merge-sort.js
+  [07_2]: merge-sort-bottom-up.js
+  [08_1]: odd-even-sort.js
   [09_a]: http://www.growingwiththeweb.com/2012/12/algorithm-quicksort.html
-  [09_1]: https://github.com/Tyriar/js-sorting/blob/master/src/quicksort.js
+  [09_1]: quicksort.js
   [10_a]: http://www.growingwiththeweb.com/2013/12/selection-sort.html
-  [10_1]: https://github.com/Tyriar/js-sorting/blob/master/src/selection-sort.js
+  [10_1]: selection-sort.js
 
 ## Distribution sorts
 
@@ -40,4 +40,4 @@
 | [Counting sort][d01_a] | [1][d01_1]           | Θ(n + k)           | Θ(n + k) | Where k = number of possible values
 
   [d01_a]: http://www.growingwiththeweb.com/2014/05/counting-sort.html
-  [d01_1]: https://github.com/Tyriar/js-sorting/blob/master/src/counting-sort.js
+  [d01_1]: counting-sort.js
