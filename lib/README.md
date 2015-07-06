@@ -41,7 +41,7 @@
 |------------------------|----------------------|------------------------------------------|------------------------|-------
 | [Bucket sort][d01_a]   | [1][d01_1]           | O(n^2), Ω(n + k), Θ(n + k)<sup>[1]</sup> | Θ(n + k)<sup>[2]</sup> | Where k = number of buckets
 | [Counting sort][d02_a] | [1][d02_1]           | Θ(n + k)                                 | Θ(k)<sup>[3]</sup>     | Where k = number of possible values
-|  Radix sort            | [1][d03_1]           | Θ(d(n + k))<sup>[4]</sup>                | Θ(n + k)<sup>[4]</sup> | Where d = number of digits
+|  Radix sort            | [1][d03_1]           | Θ(d(n + k))<sup>[4]</sup>                | Θ(n + k)<sup>[4]</sup> | Where d = number of digits, k = number of possible values
 
 <sup>[1]</sup> Average case<br>
 <sup>[2]</sup> O(n * k) if buckets are allocated space for n elements<br>
