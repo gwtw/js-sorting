@@ -1,39 +1,39 @@
 ## Comparison sorts
 
-| Algorithm              | File                 | Time                         | Space    |
-|------------------------|----------------------|------------------------------|----------|
-| [Bubble sort][01_a]    | [1][01_1], [2][01_2] | Θ(n^2)                       | Θ(1)     |
-|  Cocktail sort         | [1][02_1]            | O(n^2), Ω(n)                 | Θ(1)     |
-|  Comb sort             | [1][03_1]            | Ω((n^2)/(2^p))<sup>[1]</sup> | Θ(1)     |
-|  Gnome sort            | [1][04_1]            | O(n^2), Ω(n)                 | Θ(1)     |
-| [Heapsort][05_a]       | [1][05_1]            | Θ(n log n)                   | Θ(1)     |
-| [Insertion sort][06_a] | [1][06_1]            | O(n^2), Ω(n)                 | Θ(1)     |
-| [Merge sort][07_a]     | [1][07_1], [2][07_2] | Θ(n log n)                   | Θ(n)     |
-|  Odd-even sort         | [1][08_1]            | O(n^2), Ω(n)                 | Θ(1)     |
-| [Quicksort][09_a]      | [1][09_1]            | O(n^2), Ω(n log n)           | O(log n) |
-| [Selection sort][10_a] | [1][10_1]            | O(n^2), Ω(n)                 | Θ(1)     |
+| Algorithm               | File                   | Time                         | Space    |
+|-------------------------|------------------------|------------------------------|----------|
+| [Bubble sort][c01_a]    | [1][c01_1], [2][c01_2] | Θ(n^2)                       | Θ(1)     |
+|  Cocktail sort          | [1][c02_1]             | O(n^2), Ω(n)                 | Θ(1)     |
+|  Comb sort              | [1][c03_1]             | Ω((n^2)/(2^p))<sup>[1]</sup> | Θ(1)     |
+|  Gnome sort             | [1][c04_1]             | O(n^2), Ω(n)                 | Θ(1)     |
+| [Heapsort][c05_a]       | [1][c05_1]             | Θ(n log n)                   | Θ(1)     |
+| [Insertion sort][c06_a] | [1][c06_1]             | O(n^2), Ω(n)                 | Θ(1)     |
+| [Merge sort][c07_a]     | [1][c07_1], [2][c07_2] | Θ(n log n)                   | Θ(n)     |
+|  Odd-even sort          | [1][c08_1]             | O(n^2), Ω(n)                 | Θ(1)     |
+| [Quicksort][c09_a]      | [1][c09_1]             | O(n^2), Ω(n log n)           | O(log n) |
+| [Selection sort][c10_a] | [1][c10_1]             | O(n^2), Ω(n)                 | Θ(1)     |
 
 <sup>[1]</sup> Average case, where p = number of increments
 
-  [01_a]: http://www.growingwiththeweb.com/2014/02/bubble-sort.html
-  [01_1]: bubble-sort.js
-  [01_2]: bubble-sort-optimised.js
-  [02_1]: cocktail-sort.js
-  [03_1]: comb-sort.js
-  [04_1]: gnome-sort.js
-  [05_a]: http://www.growingwiththeweb.com/2012/11/algorithm-heapsort.html
-  [05_1]: heapsort.js
-  [06_a]: http://www.growingwiththeweb.com/2012/11/algorithm-insertion-sort.html
-  [06_1]: insertion-sort.js
-  [07_a]: http://www.growingwiththeweb.com/2012/11/algorithm-merge-sort.html
-  [07_1]: merge-sort.js
-  [07_2]: merge-sort-bottom-up.js
-  [08_1]: odd-even-sort.js
-  [09_a]: http://www.growingwiththeweb.com/2012/12/algorithm-quicksort.html
-  [09_1]: quicksort.js
-  [10_a]: http://www.growingwiththeweb.com/2013/12/selection-sort.html
-  [10_1]: selection-sort.js
-  [11_1]: bucket-sort.js
+  [c01_a]: http://www.growingwiththeweb.com/2014/02/bubble-sort.html
+  [c01_1]: bubble-sort.js
+  [c01_2]: bubble-sort-optimised.js
+  [c02_1]: cocktail-sort.js
+  [c03_1]: comb-sort.js
+  [c04_1]: gnome-sort.js
+  [c05_a]: http://www.growingwiththeweb.com/2012/11/algorithm-heapsort.html
+  [c05_1]: heapsort.js
+  [c06_a]: http://www.growingwiththeweb.com/2012/11/algorithm-insertion-sort.html
+  [c06_1]: insertion-sort.js
+  [c07_a]: http://www.growingwiththeweb.com/2012/11/algorithm-merge-sort.html
+  [c07_1]: merge-sort.js
+  [c07_2]: merge-sort-bottom-up.js
+  [c08_1]: odd-even-sort.js
+  [c09_a]: http://www.growingwiththeweb.com/2012/12/algorithm-quicksort.html
+  [c09_1]: quicksort.js
+  [c10_a]: http://www.growingwiththeweb.com/2013/12/selection-sort.html
+  [c10_1]: selection-sort.js
+  [c11_1]: bucket-sort.js
 
 ## Distribution sorts
 
