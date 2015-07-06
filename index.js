@@ -20,5 +20,6 @@ module.exports = {
   mergeSortBottomUp: require('./lib/merge-sort-bottom-up'),
   oddEvenSort: require('./lib/odd-even-sort'),
   quicksort: require('./lib/quicksort'),
+  radixSort: require('./lib/radix-sort'),
   selectionSort: require('./lib/selection-sort')
 };
