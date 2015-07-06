@@ -48,8 +48,8 @@
 <sup>[3]</sup> O(n + k) if buckets are lists of values instead of a count of values
 <sup>[4]</sup> When the inner stable sort used takes Θ(n + k)
 
-  [d02_a]: http://www.growingwiththeweb.com/2015/06/bucket-sort.html
+  [d01_a]: http://www.growingwiththeweb.com/2015/06/bucket-sort.html
   [d01_1]: bucket-sort.js
   [d02_a]: http://www.growingwiththeweb.com/2014/05/counting-sort.html
   [d02_1]: counting-sort.js
-  [d02_1]: radix-sort.js
+  [d03_1]: radix-sort.js
