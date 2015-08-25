@@ -1,4 +1,5 @@
 /**
+ * @module index
  * @license
  * js-sorting <http://github.com/Tyriar/js-sorting>
  * Copyright 2014 Daniel Imms <http://www.growingwiththeweb.com>
