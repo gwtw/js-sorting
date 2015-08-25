@@ -41,7 +41,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.config('jsdoc', {
     dist : {
-      src: ['index.js', 'lib/**/*.js', 'test/**/*.js'],
+      src: ['index.js', 'lib/**/*.js'],
       options: {
         destination: 'doc'
       }
