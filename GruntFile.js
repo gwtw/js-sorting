@@ -43,7 +43,8 @@ module.exports = function(grunt) {
     dist : {
       src: ['index.js', 'lib/**/*.js'],
       options: {
-        destination: 'doc'
+        destination: 'doc',
+        readme: 'README.md'
       }
     }
   });

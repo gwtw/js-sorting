@@ -4,6 +4,9 @@
  */
 'use strict';
 
+/**
+ * Exports all sorting algorithms in ./lib.
+ */
 module.exports = {
   bubbleSortOptimised: require('./lib/bubble-sort-optimised'),
   bubbleSort: require('./lib/bubble-sort'),
