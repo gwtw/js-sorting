@@ -14,6 +14,7 @@ module.exports = {
   cocktailSort: require('./lib/cocktail-sort'),
   combSort: require('./lib/comb-sort'),
   countingSort: require('./lib/counting-sort'),
+  countingSortWithMin: require('./lib/counting-sort-with-min'),
   gnomeSort: require('./lib/gnome-sort'),
   heapsort: require('./lib/heapsort'),
   insertionSort: require('./lib/insertion-sort'),

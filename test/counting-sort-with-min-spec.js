@@ -1,7 +1,7 @@
 var testHelper = require("./test-helper");
-var algorithm = require("../index").countingSort;
+var algorithm = require("../index").countingSortWithMin;
 
-describe("counting-sort", function () {
+describe("counting-sort-with-min", function () {
   for (var i = 0; i < testHelper.integerTests.length; i++) {
     (function (test) {
       var sorted = testHelper.getSorted(test);
@@ -9,11 +9,9 @@ describe("counting-sort", function () {
       var minValue = sorted[0];
       var maxValue = sorted[sorted.length - 1];
 
-      if (minValue >= 0) {
-        it(test.it, function () {
-          expect(algorithm(original, maxValue)).toEqual(sorted);
-        });
-      }
+      it(test.it, function () {
+        expect(algorithm(original, minValue, maxValue)).toEqual(sorted);
+      });
     })(testHelper.integerTests[i]);
   }
 });
