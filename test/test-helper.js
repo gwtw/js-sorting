@@ -68,8 +68,10 @@ testHelper.runSwapObserverTests = function (algorithm) {
         observer: function () {}
       };
       spyOn(swapWrapper, 'observer');
-      algorithm([2, 1], undefined, swapWrapper.observer)
+      algorithm.attachSwapObserver(swapWrapper.observer);
+      algorithm([2, 1], undefined, swapWrapper.observer);
       expect(swapWrapper.observer).toHaveBeenCalled();
+      algorithm.attachSwapObserver();
     });
   });
 };
@@ -81,7 +83,7 @@ testHelper.runShiftObserverTests = function (algorithm) {
         observer: function () {}
       };
       spyOn(shiftWrapper, 'observer');
-      algorithm([5, 4, 1, 2, 3], undefined, shiftWrapper.observer)
+      algorithm([5, 4, 1, 2, 3], undefined, shiftWrapper.observer);
       expect(shiftWrapper.observer).toHaveBeenCalled();
     });
   });
