@@ -61,12 +61,11 @@ bubbleSort.compare = function (a, b) {
   originalCompare(array, a, b);
 };
 
-var originalSwap = bubbleSort.swap;
-bubbleSort.swap = function (array, a, b) {
+bubbleSort.attachSwapObserver(function (array, a, b) {
   alert('Swapping "' + array[a] + '" (i=' + a + ') with "' +
                        array[b] + '" (i=' + b + ')');
   originalSwap(array, a, b);
-};
+});
 ```
 
 The functions available are different for each algorithm since not all sorts only do compares and swaps to transform the array in a standard way. For example [insertion sort exposes a `shift` function][9] which shifts an item to a particular index. While this is the same as swapping the item with the adjacent item until it reaches the index, it is achieved in half the number of assignments by only assigning the item being shifted once. The way that this operation is visualised is quite different to just x swaps.
