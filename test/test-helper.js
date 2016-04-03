@@ -61,16 +61,31 @@ testHelper.runCustomComparisonTests = function (algorithm) {
   });
 };
 
+testHelper.runCompareObserverTests = function (algorithm) {
+  describe('compare observer tests', function () {
+    it('should call the compare observer', function () {
+      var wrapper = {
+        observer: function () {}
+      };
+      spyOn(wrapper, 'observer');
+      algorithm.attachCompareObserver(wrapper.observer);
+      algorithm([2, 1], undefined);
+      expect(wrapper.observer).toHaveBeenCalled();
+      algorithm.attachCompareObserver();
+    });
+  });
+};
+
 testHelper.runSwapObserverTests = function (algorithm) {
   describe('swap observer tests', function () {
     it('should call the swap observer', function () {
-      var swapWrapper = {
+      var wrapper = {
         observer: function () {}
       };
-      spyOn(swapWrapper, 'observer');
-      algorithm.attachSwapObserver(swapWrapper.observer);
-      algorithm([2, 1], undefined, swapWrapper.observer);
-      expect(swapWrapper.observer).toHaveBeenCalled();
+      spyOn(wrapper, 'observer');
+      algorithm.attachSwapObserver(wrapper.observer);
+      algorithm([2, 1], undefined);
+      expect(wrapper.observer).toHaveBeenCalled();
       algorithm.attachSwapObserver();
     });
   });
@@ -79,12 +94,12 @@ testHelper.runSwapObserverTests = function (algorithm) {
 testHelper.runShiftObserverTests = function (algorithm) {
   describe('shift observer tests', function () {
     it('should call the shift observer', function () {
-      var shiftWrapper = {
+      var wrapper = {
         observer: function () {}
       };
-      spyOn(shiftWrapper, 'observer');
-      algorithm([5, 4, 1, 2, 3], undefined, shiftWrapper.observer);
-      expect(shiftWrapper.observer).toHaveBeenCalled();
+      spyOn(wrapper, 'observer');
+      algorithm([5, 4, 1, 2, 3], undefined, wrapper.observer);
+      expect(wrapper.observer).toHaveBeenCalled();
     });
   });
 };

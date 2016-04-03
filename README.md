@@ -55,16 +55,13 @@ mergeSort.sort(list, complexNameSort);
 In order to support [one of my other projects][8], various methods are exposed for each sort that allow observation of internal array changes. This can be done by wrapping the functions like so:
 
 ```javascript
-var originalCompare = bubbleSort.compare;
-bubbleSort.compare = function (a, b) {
+bubbleSort.attachCompareObserver = function (a, b) {
   alert('Comparing value at index "' + a + '" with "' + b + '"');
-  originalCompare(array, a, b);
 };
 
 bubbleSort.attachSwapObserver(function (array, a, b) {
   alert('Swapping "' + array[a] + '" (i=' + a + ') with "' +
                        array[b] + '" (i=' + b + ')');
-  originalSwap(array, a, b);
 });
 ```
 

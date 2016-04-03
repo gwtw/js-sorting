@@ -5,5 +5,7 @@ describe("gnome-sort", function () {
   testHelper.runIntegerTests(algorithm);
   testHelper.runStringTests(algorithm);
   testHelper.runCustomComparisonTests(algorithm);
+
+  testHelper.runCompareObserverTests(algorithm);
   testHelper.runSwapObserverTests(algorithm);
 });
