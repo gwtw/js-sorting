@@ -6,6 +6,6 @@ describe("insertion-sort", function () {
   testHelper.runStringTests(algorithm);
   testHelper.runCustomComparisonTests(algorithm);
 
-  testHelper.runCompareObserverTests(algorithm);
+  //testHelper.runCompareObserverTests(algorithm);
   testHelper.runShiftObserverTests(algorithm);
 });
