@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tyriar/js-sorting.git"
+    "url": "https://github.com/GrowingWithTheWeb/js-sorting.git"
   },
   "keywords": [
     "algorithm",
@@ -17,9 +17,9 @@
   "author": "Daniel Imms (http://www.growingwiththeweb.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tyriar/js-sorting/issues"
+    "url": "https://github.com/GrowingWithTheWeb/js-sorting/issues"
   },
-  "homepage": "https://github.com/Tyriar/js-sorting",
+  "homepage": "https://github.com/GrowingWithTheWeb/js-sorting",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-eslint": "^17.0.0",
