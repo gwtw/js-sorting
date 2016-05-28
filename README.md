@@ -1,8 +1,8 @@
 # js-sorting [![NPM version](http://img.shields.io/npm/v/js-sorting.svg?style=flat)](https://www.npmjs.org/package/js-sorting)
 
-[![Build Status](http://img.shields.io/travis/GrowingWithTheWeb/js-sorting.svg?style=flat)](http://travis-ci.org/GrowingWithTheWeb/js-sorting)
-[![Code climate](http://img.shields.io/codeclimate/github/GrowingWithTheWeb/js-sorting.svg?style=flat)](https://codeclimate.com/github/GrowingWithTheWeb/js-sorting)
-[![Code coverage](http://img.shields.io/codeclimate/coverage/github/GrowingWithTheWeb/js-sorting.svg?style=flat)](https://codeclimate.com/github/GrowingWithTheWeb/js-sorting)
+[![Build Status](http://img.shields.io/travis/gwtw/js-sorting.svg?style=flat)](http://travis-ci.org/gwtw/js-sorting)
+[![Code climate](http://img.shields.io/codeclimate/github/gwtw/js-sorting.svg?style=flat)](https://codeclimate.com/github/gwtw/js-sorting)
+[![Code coverage](http://img.shields.io/codeclimate/coverage/github/gwtw/js-sorting.svg?style=flat)](https://codeclimate.com/github/gwtw/js-sorting)
 
 A collection of sorting algorithms written in JavaScript.
 
@@ -92,9 +92,9 @@ MIT © [Daniel Imms](http://www.growingwiththeweb.com)
 
 ## See also
 
-* [js-data-structures](https://github.com/GrowingWithTheWeb/js-data-structures)
-* [js-design-patterns](https://github.com/GrowingWithTheWeb/js-design-patterns)
-* [js-interview-questions](https://github.com/GrowingWithTheWeb/js-interview-questions)
+* [js-data-structures](https://github.com/gwtw/js-data-structures)
+* [js-design-patterns](https://github.com/gwtw/js-design-patterns)
+* [js-interview-questions](https://github.com/gwtw/js-interview-questions)
 
 
 
@@ -103,5 +103,5 @@ MIT © [Daniel Imms](http://www.growingwiththeweb.com)
 [4]: lib
 [5]: lib/merge-sort.js
 [6]: lib/README.md
-[8]: https://github.com/GrowingWithTheWeb/sorting-visualiser
+[8]: https://github.com/gwtw/sorting-visualiser
 [9]: lib/insertion-sort.js
