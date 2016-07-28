@@ -1,8 +1,6 @@
-# js-sorting [![NPM version](http://img.shields.io/npm/v/js-sorting.svg?style=flat)](https://www.npmjs.org/package/js-sorting)
+# js-sorting
 
-[![Build Status](http://img.shields.io/travis/gwtw/js-sorting.svg?style=flat)](http://travis-ci.org/gwtw/js-sorting)
-[![Code climate](http://img.shields.io/codeclimate/github/gwtw/js-sorting.svg?style=flat)](https://codeclimate.com/github/gwtw/js-sorting)
-[![Code coverage](http://img.shields.io/codeclimate/coverage/github/gwtw/js-sorting.svg?style=flat)](https://codeclimate.com/github/gwtw/js-sorting)
+[![Build Status](https://travis-ci.org/gwtw/js-sorting.svg?branch=master)](http://travis-ci.org/gwtw/js-sorting)
 
 A collection of sorting algorithms written in JavaScript.
 
